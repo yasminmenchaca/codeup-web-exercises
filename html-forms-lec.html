@@ -23,26 +23,30 @@
 	******************************** !-->
 
 	<!-- TODO TOGETHER: Review the following form - focus on the structure, method, and action	-->
-	<form method="POST" action="PUT YOUR HOOKBIN URL HERE!">
+<!--	<form method="GET" action="https://hookb.in/mZzPYgJPymUBVLpJXdzO">-->
 
-		<label for="username">Username</label>
-		<input id="username" name="username" type="text">
-		<br>
+<!--		<label for="username">Username</label>-->
+<!--		<input id="username" name="username" type="text">-->
+<!--		<br>-->
 
-		<label for="password">Password</label>
-		<input id="password" name="password" type="password">
-		<br>
+<!--		<label for="password">Password</label>-->
+<!--		<input id="password" name="password" type="password">-->
+<!--		<br>-->
 
-		<input type="submit">
-	</form>
+<!--		<input type="submit">-->
+<!--	</form>-->
 
 
 	<!-- TODO: Practice submitting different values from the form. View the results on your hookbin dashboard.	-->
 
 
+<!--	<form  method="get" action="https://hookb.in/mZzPYgJPymUBVLpJXdzO">-->
+<!--		<label for="zipcode-input">Zipcode</label>-->
+<!--		<input type="text" name="zipcode" id="zipcode-input" placeholder="Enter your zipcode">-->
 
+<!--		<button type="submit">Search</button>-->
 
-
+<!--	</form>-->
 
 
 	<!-- TODO TOGETHER: Build a form, using a GET request, with an input to enter and submit a zipcode	-->
@@ -73,6 +77,63 @@
 			Review select elements
 			Review hidden inputs
 	************************************ !-->
+
+
+	<form method="get" action="https://hookb.in/mZzPYgJPymUBVLpJXdzO">
+
+		<label for="screen-name-input">Screen Name:</label>
+		<input type="text" id="screen-name-input" name="screen-name" placeholder="Enter your Screen Name">
+
+		<br>
+
+		<label for="email-input">Email:</label>
+		<input type="email" id="email-input" name="email" placeholder="Enter your email">
+
+		<br>
+
+		<textarea name="comment" id="comment-input" cols="30" rows="10"></textarea>
+
+		<br>
+
+		<select name="coffee-choice" id="coffee-input">
+			<option value="light">Light Roast</option>
+			<option value="medium">Medium Roast</option>
+			<option value="dark">Dark Roast</option>
+
+		</select>
+
+
+		<h2>Choose a letter</h2>
+
+
+		<label for="radio-a">a</label>
+		<input type="radio" id="radio-a" value="a" name="radio-group">
+
+		<label for="radio-b">b</label>
+		<input type="radio" id="radio-b" value="b" name="radio-group">
+
+		<label for="radio-c">c</label>
+		<input type="radio" id="radio-c" value="c" name="radio-group">
+
+		<label for="radio-d">d</label>
+		<input type="radio" id="radio-d" value="d" name="radio-group">
+
+		<br>
+
+		<label for="newsletter-input">Sign up for our newsletter</label>
+
+		<input type="checkbox" name="newsletter" id="newsletter-input" checked>
+
+		<br>
+
+		<input type="hidden" name="user-id" value="335">
+
+		<button type="submit">Submit</button>
+
+
+	</form>
+
+
 
 
 
