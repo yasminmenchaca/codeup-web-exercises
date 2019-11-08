@@ -6,47 +6,51 @@ body, html {
     font-family: Arial, Ubuntu, sans-serif;
 }
 
+:root{
+    --main-border: 1px solid lightgrey;
+    --main-border-radius: 5px;
+    --main-padding: 5px;
+    --main-margin: 5px;
+    --main-width: auto;
+}
+
 .message-info{
-    border-radius: 5px;
-    border:1px solid lightgrey;
     background-color: #CDDEFF;
     color:#423B9A;
-    padding: 5px;
-    margin: 5px;
-    width: auto;
-    /*font-weight: bold;*/
+    border-radius: var(--main-border-radius);
+    border: var(--main-border);
+    padding: var(--main-padding);
+    margin: var(--main-margin);
+    width: var(--main-width);
 
 }
 
 .message-success{
-    border-radius: 5px;
-    border:1px solid lightgrey;
     background-color: #CFF3DA;
     color:#35814F;
-    padding: 5px;
-    margin: 5px;
-    width: auto;
-    /*font-weight: bold;*/
+    border-radius: var(--main-border-radius);
+    border: var(--main-border);
+    padding: var(--main-padding);
+    margin: var(--main-margin);
+    width: var(--main-width);
 }
 
 .message-warning{
-    border-radius: 5px;
-    border:1px solid lightgrey;
     background-color: #FBFBC8;
     color:#AEA04F;
-    padding: 5px;
-    margin: 5px;
-    width: auto;
-    /*font-weight: bold;*/
+    border-radius: var(--main-border-radius);
+    border: var(--main-border);
+    padding: var(--main-padding);
+    margin: var(--main-margin);
+    width: var(--main-width);
 }
 
 .message-error{
-    border-radius: 5px;
-    border:1px solid lightgrey;
     background-color: #FAD3D7;
     color: #8F2C43;
-    padding: 5px;
-    margin: 5px;
-    width: auto;
-    /*font-weight: bold;*/
+    border-radius: var(--main-border-radius);
+    border: var(--main-border);
+    padding: var(--main-padding);
+    margin: var(--main-margin);
+    width: var(--main-width);
 }
