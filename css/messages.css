@@ -1,0 +1,43 @@
+body, html {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Ubuntu, sans-serif;
+}
+
+.message-info{
+    border-radius: 5px;
+    border:1px solid lightgrey;
+    background-color: #CDDEFF;
+    color:#423B9A;
+    padding: 5px;
+    margin: 5px;
+}
+
+.message-success{
+    border-radius: 5px;
+    border:1px solid lightgrey;
+    background-color: #CFF3DA;
+    color:#35814F;
+    padding: 5px;
+    margin: 5px;
+}
+
+.message-warning{
+    border-radius: 5px;
+    border:1px solid lightgrey;
+    background-color: #FBFBC8;
+    color:#AEA04F;
+    padding: 5px;
+    margin: 5px;
+}
+
+.message-error{
+    border-radius: 5px;
+    border:1px solid lightgrey;
+    background-color: #FAD3D7;
+    color: #8F2C43;
+    padding: 5px;
+    margin: 5px;
+}
