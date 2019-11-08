@@ -1,7 +1,7 @@
-.fancy-header {
-    color: purple;
-    text-decoration: underline;
-}
+/*.fancy-header {*/
+/*    color: purple;*/
+/*    text-decoration: underline;*/
+/*}*/
 
 h1, h2, .fancy-header {
     /*color: blue;*/
@@ -14,7 +14,7 @@ h1, p {
 
 body {
     background-image:url("../img/pattern.png");
-    background-color: lightgrey;
+    background-color: #F4F4F4;
     background-repeat: repeat;
     background-position: center;
     font-family: 'Raleway', sans-serif;
@@ -22,7 +22,7 @@ body {
 }
 
 ul, ol {
-    list-style-image: url("../img/red_bullet_right.gif");
+    list-style-type: circle;
 }
 
 table {
