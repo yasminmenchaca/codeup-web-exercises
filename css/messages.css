@@ -13,6 +13,9 @@ body, html {
     color:#423B9A;
     padding: 5px;
     margin: 5px;
+    width: auto;
+    /*font-weight: bold;*/
+
 }
 
 .message-success{
@@ -22,6 +25,8 @@ body, html {
     color:#35814F;
     padding: 5px;
     margin: 5px;
+    width: auto;
+    /*font-weight: bold;*/
 }
 
 .message-warning{
@@ -31,6 +36,8 @@ body, html {
     color:#AEA04F;
     padding: 5px;
     margin: 5px;
+    width: auto;
+    /*font-weight: bold;*/
 }
 
 .message-error{
@@ -40,4 +47,6 @@ body, html {
     color: #8F2C43;
     padding: 5px;
     margin: 5px;
+    width: auto;
+    /*font-weight: bold;*/
 }
