@@ -9,7 +9,7 @@ body, html {
 :root{
     --main-border: 1px solid lightgrey;
     --main-border-radius: 5px;
-    --main-padding: 5px;
+    --main-padding: 7px;
     --main-margin: 5px;
     --main-width: auto;
 }
