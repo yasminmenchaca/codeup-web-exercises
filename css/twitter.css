@@ -9,11 +9,6 @@
     box-sizing: border-box;
 }
 
-.nav-item {
-    padding: 1.5em;
-    display: inline-block;
-}
-
 .profile-image {
     position: absolute;
     top: 15em;
@@ -21,21 +16,22 @@
 
 .profile-details {
 float: left;
-width: calc(25% - .5em);
-/*padding-left:2em;*/
+width: calc(25% - 1em);
+margin: 0.5em;
+
 }
 
 .timeline {
-width: calc(50% - .5em);
+width: calc(50% - 1em);
 float: left;
-/*padding-left:2em;*/
+margin: 0.5em;
 
 }
 
 .who-to-follow {
 float: right;
-width: calc(25% - .5em);
-/*padding-left:2em;*/
+width: calc(25% - 1em);
+margin: 0.5em;
 
 }
 
@@ -43,6 +39,7 @@ width: calc(25% - .5em);
     float: right;
     line-height: 80px;
 }
+
 
 body, html {
     background-color: var(--main-bg);
@@ -52,6 +49,7 @@ body, html {
     padding: 0;
     font-family: Arial, Ubuntu, sans-serif;
 }
+
 header {
     background-image: url("https://loremflickr.com/1200/300");
     background-size: cover;
@@ -67,6 +65,10 @@ a {
     position: fixed;
     z-index: 1000px;
 
+}
+.nav-item {
+    padding: 1.5em;
+    display: inline-block;
 }
 .nav {
     list-style-type: none;
@@ -131,6 +133,7 @@ a {
 
 .profile-items {
     padding: 0;
+    list-style-type: none;
 }
 
 .profile-entry {
