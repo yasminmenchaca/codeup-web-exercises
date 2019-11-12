@@ -3,6 +3,7 @@
     <head>
         <title>Floats Example</title>
             <style>
+
                 #container {
                     margin: 50px auto;
                     width: 500px;
@@ -10,32 +11,59 @@
                     padding: 10px;
                 }
                 #box1 {
-                    background-color: #77AF00; /* greenish */
+                    background-color: #77AF00;
                     height: 100px;
                     width: 100px;
                     margin: 10px;
                     float:right;
+                    color: white;
                 }
+
                 #box2 {
-                    background-color: #1969B2; /* blueish */
+                    background-color: #202426;
                     height: 150px;
                     width: 150px;
                     margin: 10px;
                     float:left;
-
+                    color: white;
                 }
 
-                p {
-                    clear: both;
+                #box3 {
+                    background-color: #1969B2;
+                    height: 150px;
+                    width: 150px;
+                    margin: 10px;
+                    float:left;
+                    color: white;
+                }
+
+                #box4 {
+                    background-color: #F6FBEF;
+                    height: 100px;
+                    width: 100px;
+                    margin: 10px;
+                    float:left;
+                }
+
+                #text1 {
+                    clear: right;
+                    background-color: cadetblue;
+
                 }
 
             </style>
         </head>
+
         <body>
+
         <div id="container">
-            <div id="box1"></div>
-            <div id="box2"></div>
-            <p>
+
+            <div id="box1">1</div>
+            <div id="box2">2</div>
+            <div id="box3">3</div>
+            <div id="box4">4</div>
+
+            <div id="text1">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
                 enim ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -43,7 +71,7 @@
                 in reprehenderit in voluptate velit esse cillum dolore eu fugiat
                 nulla pariatur. Excepteur sint occaecat cupidatat non proident,
                 sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
+            </div>
         </div>
     </body>
 </html>
