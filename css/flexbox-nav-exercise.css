@@ -11,22 +11,24 @@ body {
 
 nav {
     background: #C1C1C1;
-
 }
 ul {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
+    align-items: center;
 }
+
 nav a {
     text-decoration: none;
     color: black;
-    display: inline-block; /* inline-block to increase clickable area beyond the text */
-    padding: 1em; /* increases clickable area of anchor tags on all sides by 1em */
+    display: inline-block;
+    padding: .5em;
 }
-nav a:hover {
-    background: black;
+
+a:hover {
+    color: blue;
 }
 
 /*articles*/
@@ -54,7 +56,6 @@ nav ul li:nth-child(5) {
     padding-top: .2em;
     padding-bottom: .2em;
     font-family: 'Montserrat', sans-serif;
-
 }
 /*follow us*/
 nav ul li:nth-child(6) {
