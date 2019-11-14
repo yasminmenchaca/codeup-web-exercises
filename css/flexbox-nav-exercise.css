@@ -11,19 +11,17 @@ body {
 
 nav {
     background: #C1C1C1;
-    height: 2.5em;
     display: flex;
 
 }
 ul {
     list-style: none;
     width: 100%;
-    padding: 0;
+    padding: 1.3em;
     margin: 0;
     display: flex;
     align-items: center;
     font-size: .5em;
-    font-weight: bold;
 }
 
 nav a {
@@ -60,15 +58,11 @@ nav ul li:nth-child(4) {
 }
 /*logo*/
 nav ul li:nth-child(5) {
-    /*margin: auto;*/
     font-size: 3em;
-    /*padding-top: 0 .2em;*/
-    /*padding-bottom: 0 .2em;*/
     padding: 0 .2em;
     font-family: 'Montserrat', sans-serif;
     position: absolute;
     left: 46vw;
-    /*text-align: center;*/
 }
 
 /*follow us*/
