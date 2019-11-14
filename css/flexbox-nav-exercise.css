@@ -1,0 +1,74 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+}
+
+:root {
+    --main-font-family: 'Work Sans', sans-serif;
+}
+
+nav {
+    background: #C1C1C1;
+
+}
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+nav a {
+    text-decoration: none;
+    color: black;
+    display: inline-block; /* inline-block to increase clickable area beyond the text */
+    padding: 1em; /* increases clickable area of anchor tags on all sides by 1em */
+}
+nav a:hover {
+    background: black;
+}
+
+/*articles*/
+nav ul li:nth-child(1) {
+    font-family: var(--main-font-family);
+
+}
+/*products*/
+nav ul li:nth-child(2) {
+    font-family: var(--main-font-family);
+}
+/*market*/
+nav ul li:nth-child(3) {
+    font-family: var(--main-font-family);
+}
+/*jobs*/
+nav ul li:nth-child(4) {
+    margin-right: auto;
+    font-family: var(--main-font-family);
+}
+/*logo*/
+nav ul li:nth-child(5) {
+    margin: auto;
+    font-size: 3em;
+    padding-top: .2em;
+    padding-bottom: .2em;
+    font-family: 'Montserrat', sans-serif;
+
+}
+/*follow us*/
+nav ul li:nth-child(6) {
+    font-family: var(--main-font-family);
+    margin-left: auto;
+}
+/*search*/
+nav ul li:nth-child(7) {
+}
+/*cart*/
+nav ul li:nth-child(8) {
+
+}
+/*user circle*/
+nav ul li:nth-child(9) {
+
+}
