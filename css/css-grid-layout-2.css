@@ -1,0 +1,54 @@
+.parent {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right:0;
+    left: 0;
+}
+
+:root {
+    --main-bg-color: #ffd700;
+    --main-padding: 1.2em;
+
+}
+
+/*header*/
+.div1 {
+    grid-area: 1 / 1 / 2 / 6;
+    background-color: var(--main-bg-color);
+    padding: var(--main-padding);
+}
+
+/*footer*/
+.div2 {
+    grid-area: 5 / 1 / 6 / 6;
+    background-color: var(--main-bg-color);
+    padding: var(--main-padding);
+}
+
+/*nav left*/
+.div3 {
+    grid-area: 2 / 1 / 5 / 2;
+    background-color: var(--main-bg-color);
+    padding: var(--main-padding);
+}
+
+/*nav right*/
+.div4 {
+    grid-area: 2 / 5 / 5 / 6;
+    background-color: var(--main-bg-color);
+    padding: var(--main-padding);
+}
+
+/*articles*/
+.div5 {
+    grid-area: 2 / 2 / 5 / 5;
+    background-color: var(--main-bg-color);
+    padding: var(--main-padding);
+}
