@@ -12,8 +12,9 @@ body {
 
 .wrapper {
     display: grid;
-    grid-template-columns: auto 400px 400px 400px auto;
-    grid-column-gap: 1em;
+    grid-template-columns: auto repeat(3, 400px) auto;
+    /*grid-column-gap: 1em;*/
+    grid-gap: 1em;
     height: 100vh;
     /* TODO: make the wrapper a grid container */
     /* TODO: define five columns where the middle three columns are 400px and the outer columns fill the remaining space */
@@ -42,8 +43,8 @@ nav {
 main {
     grid-area: 2 / 3 / 3 / 5;
     display: grid;
-    grid-template-columns: auto auto auto;
-    grid-column-gap: 1em;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1em;
     /* TODO: define the grid area of main such that it takes up the columns 3 and 4 of the second row  */
     /* TODO: make main a grid container as well */
     /* TODO: define main to contain three columns that together take up equally the full width of main and have a 1em gap between grid items */
@@ -52,7 +53,7 @@ main {
 
 header ul {
     display:flex;
-    align-items: flex-start;
+    /*align-items: flex-start;*/
     /* TODO: use flex box to horizontally line up all list items */
 }
 
@@ -118,7 +119,7 @@ nav a:hover {
     height: 200px;
     border-radius: 10px;
     position: relative;
-    transition-duration: .2s;
+    transition: .2s;
     /* TODO: add a property that causes a transition of the border from lightgrey to near black in .2 seconds */
 }
 
