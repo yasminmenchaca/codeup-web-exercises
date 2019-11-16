@@ -1,0 +1,71 @@
+body {
+    margin: 0;
+}
+.parent {
+    display: grid;
+    grid-template-columns: 15% 1fr 15%;
+    grid-template-rows: 15% 1fr repeat(3, 15%) repeat(2, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    height: 100vh;
+}
+
+/*header*/
+.div1 {
+    grid-area: 1 / 1 / 2 / 4;
+    background-color: black;
+}
+
+/*Nav*/
+.div2 {
+    grid-area: 2 / 1 / 8 / 2;
+    background-color: #f0f0f0;
+
+}
+
+/*Last Footer*/
+.div3 {
+    grid-area: 7 / 2 / 8 / 4;
+    background-color: #333333;
+}
+
+/*First Footer*/
+.div4 {
+    grid-area: 6 / 2 / 7 / 4;
+    background-color: #666666;
+}
+
+/*Page Count*/
+.div5 {
+    grid-area: 5 / 2 / 6 / 4;
+}
+
+/*Article 1*/
+.div6 {
+    grid-area: 2 / 2 / 3 / 3;
+}
+
+/*Article 2*/
+.div7 {
+    grid-area: 3 / 2 / 4 / 3;
+}
+
+/*Article 3*/
+.div8 {
+    grid-area: 4 / 2 / 5 / 3;
+}
+
+/*AD 1*/
+.div9 {
+    grid-area: 2 / 3 / 3 / 4;
+}
+
+/*AD 2*/
+.div10 {
+    grid-area: 3 / 3 / 4 / 4;
+}
+
+/*AD 3*/
+.div11 {
+    grid-area: 4 / 3 / 5 / 4;
+}
