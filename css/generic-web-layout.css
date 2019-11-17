@@ -38,6 +38,10 @@ ul {
     align-items: center;
 }
 
+ol {
+    list-style: none;
+}
+
 nav a {
     text-decoration: none;
     color: white;
@@ -61,7 +65,6 @@ a:hover {
 .div2 {
     grid-area: 2 / 1 / 8 / 2;
     background-color: #f0f0f0;
-
 }
 
 /*Last Footer*/
@@ -86,17 +89,26 @@ a:hover {
 .div6 {
     grid-area: 2 / 2 / 3 / 3;
     background-color: yellow;
+    /*display: flex;*/
+    overflow: hidden;
+
 }
 
 /*Article 2*/
 .div7 {
     grid-area: 3 / 2 / 4 / 3;
     background-color: blue;
+    /*display: flex;*/
+    overflow: hidden;
+
 }
 
 /*Article 3*/
 .div8 {
     grid-area: 4 / 2 / 5 / 3;
+    /*display: flex;*/
+    overflow: hidden;
+
 }
 
 /*AD 1*/
