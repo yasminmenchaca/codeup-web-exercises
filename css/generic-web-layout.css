@@ -1,8 +1,8 @@
 * {
-    box-sizing: inherit;
+    box-sizing: border-box;
 }
 
-html, body, h1, h2, h3, h4, h5, h6 {
+html, body, h1 {
     margin: 0;
     font-family: 'Roboto', sans-serif;
 }
@@ -10,56 +10,45 @@ html, body, h1, h2, h3, h4, h5, h6 {
 .parent {
     display: grid;
     grid-template-columns: 18.5% 1fr 20%;
-    grid-template-rows: auto 1fr repeat(2, 20%) 10% 14% 45px;
+    grid-template-rows: 86px repeat(3, 25%) 10% 14% 45px;
     grid-column-gap: 0;
     grid-row-gap: 0;
     height: 100vh;
+    /*overflow: hidden;*/
 }
 
 .heading {
     color: #009688;
 }
 
-.ad-borderbox {
-    border: 1px solid black;
-}
-
-/*header*/
-nav {
-    /*grid-area: 1 / 1 / 2 / 4;*/
+/*top nav*/
+.div1 {
+    grid-area: 1 / 1 / 2 / 4;
     background-color: black;
-    display: flex;
+    overflow: hidden;
+    /*display: flex;*/
+    /*flex-direction: row;*/
+    /*justify-content: flex-start;*/
+    /*display: inline-block;*/
+
 }
 
 ul {
     list-style: none;
-    width: 100%;
     display: flex;
-    align-items: center;
+    margin: 0;
+    padding: inherit;
 }
 
 ol {
     list-style: none;
 }
 
-nav a {
+.div2 a {
     text-decoration: none;
-    color: white;
-    display: inline-block;
-    padding-left: .5em;
-    padding-right: .5em;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-}
-
-a:hover {
     color: black;
-}
 
-/*.div1 a {*/
-/*    text-decoration: none;*/
-/*}*/
+}
 
 /*Nav*/
 .div2 {
@@ -71,35 +60,55 @@ a:hover {
 .div3 {
     grid-area: 7 / 2 / 8 / 4;
     background-color: #333333;
+    color: white;
+    align-items: center;
+}
+.div3 a:link {
+    color: white;
 }
 
-/*First Footer*/
+.div3 a:hover {
+    color: white;
+}
+
+.div3 a:visited {
+    color: white;
+}
+
+/*Footer*/
 .div4 {
     grid-area: 6 / 2 / 7 / 4;
     background-color: #666666;
+    color: #FFFFFF;
+    /*padding: 30px;*/
+    padding-top: 50px;
+    padding-left: 15px;
 }
 
 /*Page Count*/
 .div5 {
     grid-area: 5 / 2 / 6 / 4;
-    background-color: green;
+    /*background-color: green;*/
+    text-align: center;
+    padding: 40px;
 }
 
 /*Article 1*/
 .div6 {
     grid-area: 2 / 2 / 3 / 3;
-    background-color: yellow;
+    /*background-color: yellow;*/
     /*display: flex;*/
     overflow: hidden;
-
+    padding: 25px 5px 15px;
 }
 
 /*Article 2*/
 .div7 {
     grid-area: 3 / 2 / 4 / 3;
-    background-color: blue;
+    /*background-color: blue;*/
     /*display: flex;*/
     overflow: hidden;
+    padding: 25px 5px 15px;
 
 }
 
@@ -108,22 +117,37 @@ a:hover {
     grid-area: 4 / 2 / 5 / 3;
     /*display: flex;*/
     overflow: hidden;
+    padding: 25px 5px 15px;
 
 }
 
 /*AD 1*/
 .div9 {
+    /*background-color: #3B94D9;*/
     grid-area: 2 / 3 / 3 / 4;
+    /*padding: 25px 5px 15px;*/
+    overflow: hidden;
+
 }
 
 /*AD 2*/
 .div10 {
+    /*background-color: #0fb784;*/
     grid-area: 3 / 3 / 4 / 4;
+    /*padding: 25px 5px 15px;*/
+    overflow: hidden;
+
+
 }
 
 /*AD 3*/
 .div11 {
+    /*background-color: #8F2C43;*/
     grid-area: 4 / 3 / 5 / 4;
+    /*padding: 25px 5px 15px;*/
+    overflow: hidden;
+
+
 }
 
 
@@ -152,7 +176,70 @@ nav ul li:nth-child(5) {
 
 }
 
-/* partners*/
+/*partners*/
 nav ul li:nth-child(6) {
 
+}
+
+.box {
+    /*float: top;*/
+    width: auto;
+    /*margin-left: 10px;*/
+    /*margin-top: 10px;*/
+    padding: 25px;
+    border: 2px solid lightgrey;
+    text-align: center;
+    margin: 10px;
+}
+
+.box2 {
+    /*float: bottom;*/
+    width: auto;
+    /*margin-left: 10px;*/
+    /*margin-top: 10px;*/
+    padding: 50px;
+    border: 2px solid lightgrey;
+    text-align: center;
+    margin: 10px;
+
+}
+
+.w3-button {
+    border: none;
+    display: inline-block;
+    padding: 10px 15px;
+    vertical-align: middle;
+    overflow: hidden;
+    text-decoration: none;
+    text-align: center;
+}
+
+.div5 a:hover {
+    color: white;
+    background-color: black;
+}
+
+.w3-white {
+    color: black;
+}
+
+.w3-grey {
+    color:white;
+    background-color: #333333;
+}
+
+.w3-nav {
+    border: none;
+    display: inline-block;
+    padding: 35px;
+    /*vertical-align: middle;*/
+    overflow: hidden;
+    text-decoration: none;
+    /*text-align: center;*/
+    color: white;
+}
+
+.div1 a:hover {
+    color: white;
+    background-color: #333333;
 }
