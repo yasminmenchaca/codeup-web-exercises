@@ -14,7 +14,6 @@ html, body, h1, h2, h3, h4, h5, h6 {
     grid-column-gap: 0;
     grid-row-gap: 0;
     height: 100vh;
-    text-overflow: ellipsis;
 }
 
 .heading {
@@ -30,27 +29,28 @@ nav {
     /*grid-area: 1 / 1 / 2 / 4;*/
     background-color: black;
     display: flex;
-    /*color: white;*/
 }
 
 ul {
     list-style: none;
     width: 100%;
-    /*padding: 1.3em;*/
-    /*margin: 0;*/
     display: flex;
     align-items: center;
-    /*font-size: .5em;*/
 }
 
 nav a {
     text-decoration: none;
     color: white;
     display: inline-block;
-    /*padding-left: .5em;*/
-    /*padding-right: .5em;*/
+    padding-left: .5em;
+    padding-right: .5em;
     align-items: center;
     justify-content: center;
+    font-size: 18px;
+}
+
+a:hover {
+    color: black;
 }
 
 /*.div1 a {*/
@@ -112,4 +112,35 @@ nav a {
 /*AD 3*/
 .div11 {
     grid-area: 4 / 3 / 5 / 4;
+}
+
+
+/*logo*/
+nav ul li:nth-child(1) {
+
+}
+
+/*about*/
+nav ul li:nth-child(2) {
+
+}
+
+/*values*/
+nav ul li:nth-child(3) {
+
+}
+
+/*news*/
+nav ul li:nth-child(4) {
+
+}
+
+/*clients*/
+nav ul li:nth-child(5) {
+
+}
+
+/* partners*/
+nav ul li:nth-child(6) {
+
 }
