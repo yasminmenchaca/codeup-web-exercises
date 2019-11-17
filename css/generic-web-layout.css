@@ -126,8 +126,7 @@ ol {
     /*background-color: #3B94D9;*/
     grid-area: 2 / 3 / 3 / 4;
     /*padding: 25px 5px 15px;*/
-    overflow: hidden;
-
+    overflow: auto;
 }
 
 /*AD 2*/
@@ -135,7 +134,7 @@ ol {
     /*background-color: #0fb784;*/
     grid-area: 3 / 3 / 4 / 4;
     /*padding: 25px 5px 15px;*/
-    overflow: hidden;
+    overflow: auto;
 
 
 }
@@ -145,7 +144,7 @@ ol {
     /*background-color: #8F2C43;*/
     grid-area: 4 / 3 / 5 / 4;
     /*padding: 25px 5px 15px;*/
-    overflow: hidden;
+    overflow: auto;
 
 
 }
