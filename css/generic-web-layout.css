@@ -10,10 +10,10 @@ html, body, h1 {
 .parent {
     display: grid;
     grid-template-columns: 18.5% 1fr 20%;
-    grid-template-rows: 86px repeat(3, 25%) 10% 14% 45px;
+    grid-template-rows: 86px repeat(3, 25%) 10% 10% 45px;
     grid-column-gap: 0;
     grid-row-gap: 0;
-    height: 100vh;
+    /*height: 100vh;*/
     /*overflow: hidden;*/
 }
 
@@ -62,6 +62,7 @@ ol {
     background-color: #333333;
     color: white;
     align-items: center;
+    padding: 10px;
 }
 .div3 a:link {
     color: white;
@@ -83,6 +84,7 @@ ol {
     /*padding: 30px;*/
     padding-top: 50px;
     padding-left: 15px;
+    padding-bottom: 30px;
 }
 
 /*Page Count*/
@@ -203,7 +205,7 @@ nav ul li:nth-child(6) {
 
 }
 
-.w3-button {
+.button {
     border: none;
     display: inline-block;
     padding: 10px 15px;
@@ -218,16 +220,12 @@ nav ul li:nth-child(6) {
     background-color: black;
 }
 
-.w3-white {
+.white {
     color: black;
 }
 
-.w3-grey {
-    color:white;
-    background-color: #333333;
-}
 
-.w3-nav {
+.a1-nav {
     border: none;
     display: inline-block;
     padding: 35px;
