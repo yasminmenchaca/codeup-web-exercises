@@ -1,0 +1,31 @@
+/*.btn {*/
+/*    color: grey;*/
+/*    border: 1px solid grey;*/
+/*}*/
+
+#signup {
+    color: grey;
+}
+
+.container{
+
+}
+
+.jumbotron {
+    margin: 10px;
+}
+
+#main-jumbotron{
+    background-image: url("../img/pizza.png");
+    background-size: cover;
+    background-position: center;
+    /*margin: 10px;*/
+    /*height: 50vh;*/
+}
+
+#jumbotron-container{
+    color: black;
+    text-align: center;
+    background-color: white;
+    opacity:0.6;
+}
