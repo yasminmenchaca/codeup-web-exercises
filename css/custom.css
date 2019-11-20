@@ -1,26 +1,32 @@
-/*.btn {*/
-/*    color: grey;*/
-/*    border: 1px solid grey;*/
+body{
+    font-family: 'Alata', sans-serif;
+}
+
+.container {
+
+}
+
+.btn-outline-success {
+    color: grey;
+    border: 1px solid grey;
+}
+/*#search-button a:hover {*/
+/*    color: #8F2C43;*/
+
 /*}*/
 
 #signup {
     color: grey;
 }
 
-.container{
-
-}
-
 .jumbotron {
-    margin: 10px;
+    margin-top: 10px;
 }
 
 #main-jumbotron{
     background-image: url("../img/pizza.png");
     background-size: cover;
     background-position: center;
-    /*margin: 10px;*/
-    /*height: 50vh;*/
 }
 
 #jumbotron-container{
@@ -28,4 +34,23 @@
     text-align: center;
     background-color: white;
     opacity:0.6;
+}
+
+.card-footer{
+    text-align: right;
+}
+
+.nav-item a:hover {
+    background-color: #E7E7E7;
+}
+
+#signup:hover {
+    background-color: #E7E7E7;
+}
+
+
+#search:hover {
+    background-color: #007AFE;
+    border-color: #007AFE;
+
 }
