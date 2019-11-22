@@ -1,6 +1,6 @@
 @media screen and (max-width: 499px) {
 
-    /** {*/
+    * {
         box-sizing: border-box;
     }
 
