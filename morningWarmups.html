@@ -157,18 +157,34 @@
 
     // TODO: write a function called youMayEnter that accepts a number that is an age. if the age is 13 or greater, return "you may enter" else, return "sorry, you need a parent or guardian to enter"
 
-    function youMayEnter(age) {
-        if (age >= 13) {
-            return "You May Enter";
+    // function youMayEnter(age) {
+    //     if (age >= 13) {
+    //         return "You May Enter";
+    //     } else {
+    //         return "Sorry, you need a parent or guardian to enter";
+    //     }
+    // }
+    //
+    // console.log(youMayEnter(25)); //output: You May Enter
+    // console.log(youMayEnter(7)); //output: Sorry, you need a parent or guardian to enter
+    // console.log(youMayEnter(10)); //output: Sorry, you need a parent or guardian to enter
+    // console.log(youMayEnter(13)); //output: You May Enter
+
+    // TODO: write a js function called seeYouLater that accepts a string. If the string is alligator, return "See you later alligator!", if the string is crocodile, return "After a while crocodile!", if the string is not either, return "So long!"
+
+    function seeYouLater(inputString) {
+        if (inputString === "alligator") {
+            return "See you later alligator!";
+        } else if (inputString === "crocodile") {
+            return "After a while crocodile!";
         } else {
-            return "Sorry, you need a parent or guardian to enter";
+            return "So long";
         }
     }
 
-    console.log(youMayEnter(25)); //output: You May Enter
-    console.log(youMayEnter(7)); //output: Sorry, you need a parent or guardian to enter
-    console.log(youMayEnter(10)); //output: Sorry, you need a parent or guardian to enter
-    console.log(youMayEnter(13)); //output: You May Enter
+    console.log(seeYouLater("alligator")); //output: "See you later alligator!"
+    console.log(seeYouLater("crocodile")); //output: "After a while crocodile!"
+    console.log(seeYouLater("dog")); //output: "So Long"
 
 
 </script>
