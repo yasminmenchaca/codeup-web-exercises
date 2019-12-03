@@ -10,12 +10,12 @@
      * > sayHello("codeup") // returns "Hello, codeup!"
      */
 
-// function sayHello(name) {
-//     return "Hello, " + name + "!";
-// }
-//
-// console.log(sayHello("Yasmin"));
-// console.log(sayHello("Codeup"));
+function sayHello(name) {
+    return "Hello, " + name + "!";
+}
+
+console.log(sayHello("Yasmin"));
+console.log(sayHello("Codeup"));
 
 
     /**
