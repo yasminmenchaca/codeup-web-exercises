@@ -16,6 +16,7 @@
 //
 // console.log(sayHello("Yasmin"));
 // console.log(sayHello("Codeup"));
+// console.log((sayHello("World")));
 
 
     /**
@@ -36,7 +37,7 @@
      * console.
      */
 
-// var myName = "Yasmin";
+// var myName = "Lynn";
 // console.log(sayHello(myName));
 
 
@@ -61,14 +62,18 @@
      * different result every time you refresh the page if you are using the random
      * number)
      */
+    // var isTwo = function (number) {
+    //     return number === 2;
+    // };
+
 
 // function isTwo(number) {
-//     return number == 2;
+//     return number === 2;
 // }
 
-// console.log(isTwo(1)); // returns false
-// console.log(isTwo(2)); // returns true
-// console.log(isTwo(random));
+    // console.log(isTwo(1)); // returns false
+    // console.log(isTwo(2)); // returns true
+    // console.log(isTwo(random));
 
 
     /**
@@ -83,10 +88,14 @@
      * > calculateTip(0.15, 33.42) // returns 5.013
      */
 
+    // var calculateTip = function(tipPercent, billTotal){
+    //     return (tipPercent * billTotal);
+    // };
 
-// function calculateTip (tipPercent, billTotal) {
-//     return (tipPercent * billTotal);
-// }
+    // function calculateTip(tipPercent, billTotal) {
+    //     return (tipPercent * billTotal);
+    // }
+
 // console.log(calculateTip(0.20, 20));
 // console.log(calculateTip(0.25, 16.88));
 // console.log(calculateTip(0.15, 33.42));
@@ -100,10 +109,11 @@
      */
 
 
-// var billTotal = Number(prompt("What is your bill total?"));
-// var tipPercent = Number(prompt("How much would you like to tip?"));
-//
-// alert("Your tip amount is $" + calculateTip(tipPercent, billTotal));
+    // var billTotal = Number(prompt("What is your bill total?"));
+    // var tipPercent = Number(prompt("How much would you like to tip?"));
+    // var amountToTip = calculateTip(tipPercent, billTotal);
+    //
+    // alert("Your tip amount is $" + amountToTip);
 
 
     /**
@@ -121,10 +131,18 @@
      * > applyDiscount(45.99, 0.12) // 40.4712
      */
 
+
+    // var applyDiscount = function (originalPrice, discountPercent) {
+    //     var discountAmount = originalPrice * discountPercent;
+    //     return originalPrice - discountAmount;
+    // };
+
+
+
 // function applyDiscount(originalPrice, discountPercent) {
 //     return originalPrice - (originalPrice * discountPercent);
 // }
-//
+
 // console.log(applyDiscount(18.99, .2));
 // console.log(applyDiscount(100, .3));
 // console.log(applyDiscount(87.65, .5));
