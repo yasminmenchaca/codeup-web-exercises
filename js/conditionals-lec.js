@@ -287,7 +287,7 @@ console.log("hello from conditionals lec.js!");
 //TODO Together: Regular way
 
 // var message;
-// var success = true;
+// var success = false;
 //
 // if (success) {
 //     message = "Operation was successful.";
@@ -296,9 +296,10 @@ console.log("hello from conditionals lec.js!");
 // }
 // console.log(message);
 
-//
+
 // var success = true;
 // var message = (success) ? "Operation was successful from tern." : "Oops, something went wrong from tern.";
+//
 // console.log(message);
 
 
@@ -317,29 +318,29 @@ console.log("hello from conditionals lec.js!");
 
 //WRITE YOUR TERNARY STATEMENT HERE!
 
-// var weather = false;
-// var weatherMessage = (weather) ? "It's raining!" : "Have a nice day!";
-//
+// var weather = "sunny";
+// var weatherMessage = (weather === "rainy") ? "it's raining" : "have a nice day";
 // console.log(weatherMessage);
-
 
 // =============== SWITCH STATEMENT ================
 //TODO Together:
 
 // var pizzaPreference = prompt("What kind of pizza do you like?");
 //
-// switch(pizzaPreference) {
+// switch (pizzaPreference) {
 //     case "pineapple and hot sauce":
 //         alert("What a coincidence, that's my favorite!");
 //         break;
 //     case "cheese":
 //         alert("Just plain cheese? Okay...");
 //         break;
+//     case "ham":
+//         alert("Ham is easy to spell and awesome!");
+//         break;
 //     default:
 //         alert(pizzaPreference + " isn't my favorite, but let's order some!");
 //         break;
 // }
-
 
 //TODO: Write a switch statement that evaluates weather as the condition. Check for "rainy", "sunny", "snow", and a default case.
 
@@ -361,6 +362,51 @@ console.log("hello from conditionals lec.js!");
 // }
 
 
+// var weather = "windy";
+//
+// switch (weather) {
+//     case "rainy":
+//         alert("It is raining");
+//         break;
+//     case "sunny":
+//         alert("it is sunny");
+//         break;
+//     case "snow":
+//         alert("it is snowing");
+//         break;
+//     default:
+//         alert("have a nice day");
+//         break;
+// }
+//
+// console.log(weather);
+
+// function checkWeather(weather) {
+//     var weatherMessage;
+//
+//     switch (weather) {
+//         case"rainy":
+//             weatherMessage = "its raining";
+//             break;
+//         case"sunny":
+//             weatherMessage = "its sunny";
+//             break;
+//         case"snowy":
+//             weatherMessage = "its snowing";
+//             break;
+//         default:
+//             weatherMessage = "have a nice day";
+//             break;
+//     }
+//     return weatherMessage;
+// }
+//
+// console.log(checkWeather("sunny"));
+// console.log(checkWeather("rainy"));
+// console.log(checkWeather("snowy"));
+// console.log(checkWeather("windy"));
+
+
 //TODO: Rewrite the intersection function from earlier as a switch statement.
 
 // var checkTrafficLight = prompt("What color is the traffic light?");
@@ -380,14 +426,46 @@ console.log("hello from conditionals lec.js!");
 //         break;
 // }
 
+// function checkTraffic(traffic) {
+//     var trafficMessage;
+//
+//     switch (traffic) {
+//         case "red":
+//             trafficMessage = "Stop";
+//             break;
+//         case "yellow":
+//             trafficMessage = "Slow Down";
+//             break;
+//         case "green":
+//             trafficMessage = "Go";
+//             break;
+//         default:
+//             trafficMessage = "Proceed with caution";
+//             break;
+//     }
+//
+//     return trafficMessage;
+// }
+//
+// console.log(checkTraffic("red"));
+// console.log(checkTraffic("yellow"));
+// console.log(checkTraffic("green"));
+// console.log(checkTraffic("blue"));
+
+
 // ================ REVERSE ENGINEERING =================
 // Visit each of these links, outline the steps required to achieve each of these demonstrations. You can write code or just write the logic steps that would achieve each output
 
 
 // 1) https://mdn.github.io/learning-area/javascript/building-blocks/allowance-updater.html
 
+// if else used when the checkbox is clicked along with the amount changing from $5 to $10. the checkbox cannot be unchecked once clicked.
+
 
 // 2) https://mdn.github.io/learning-area/javascript/building-blocks/simple-else-if.html
 
+// if else used when picking the weather
 
 // 3) https://mdn.github.io/learning-area/javascript/building-blocks/simple-ternary.html
+
+// ternary statements were used in the dropdown selection
