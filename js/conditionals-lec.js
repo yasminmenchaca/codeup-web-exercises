@@ -261,7 +261,6 @@ console.log("hello from conditionals lec.js!");
 // console.log(checkTrafficLight("blinking"));
 
 
-
 // ================ NESTED STATEMENTS ===============
 //TODO Together: If user is under 15, they are not eligible for a learners permit, else they are. If they are eligible, check age. If they are 15 they are eligible for a learners permit, if they are 16 or older and have a permit, they are eligible for license, if they are 16 or older and do not have a permit, they are not eligble for a license.
 
@@ -297,24 +296,31 @@ console.log("hello from conditionals lec.js!");
 // }
 // console.log(message);
 
-
+//
 // var success = true;
 // var message = (success) ? "Operation was successful from tern." : "Oops, something went wrong from tern.";
-// console.log(message)
+// console.log(message);
 
 
 //TODO: Refactor the following conditional as a ternary
 
 // var weather = "sunny";
 // var weatherMessage;
-
+//
 // if(weather === "rainy"){
 //    weatherMessage = "It's raining!";
 // } else {
 //     weatherMessage = "Have a nice day!";
 // }
+//
+// console.log(weatherMessage);
 
 //WRITE YOUR TERNARY STATEMENT HERE!
+
+// var weather = false;
+// var weatherMessage = (weather) ? "It's raining!" : "Have a nice day!";
+//
+// console.log(weatherMessage);
 
 
 // =============== SWITCH STATEMENT ================
@@ -337,9 +343,42 @@ console.log("hello from conditionals lec.js!");
 
 //TODO: Write a switch statement that evaluates weather as the condition. Check for "rainy", "sunny", "snow", and a default case.
 
+// var weatherCondition = prompt("What city are you in?");
+//
+// switch(weatherCondition) {
+//     case "San Antonio":
+//         alert("It is raining");
+//         break;
+//     case "Austin":
+//         alert("It is sunny");
+//         break;
+//     case "Houston":
+//         alert("It is snowing");
+//         break;
+//     default:
+//         alert("Come back later for more details!");
+//         break;
+// }
+
 
 //TODO: Rewrite the intersection function from earlier as a switch statement.
 
+// var checkTrafficLight = prompt("What color is the traffic light?");
+//
+// switch(checkTrafficLight) {
+//     case "red":
+//         alert("STOP!");
+//         break;
+//     case "yellow":
+//         alert("Slow down and prepare to stop");
+//         break;
+//     case "green":
+//         alert("don't stop");
+//         break;
+//     default:
+//         alert("keep it rolling");
+//         break;
+// }
 
 // ================ REVERSE ENGINEERING =================
 // Visit each of these links, outline the steps required to achieve each of these demonstrations. You can write code or just write the logic steps that would achieve each output
@@ -352,4 +391,3 @@ console.log("hello from conditionals lec.js!");
 
 
 // 3) https://mdn.github.io/learning-area/javascript/building-blocks/simple-ternary.html
-
