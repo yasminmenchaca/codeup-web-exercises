@@ -1,5 +1,7 @@
 "use strict";
 
+console.log("conditionals.html");
+
 /**
  * TODO:
  * Write some JavaScript that uses a `confirm` dialog to ask the user if they
@@ -17,8 +19,21 @@
  */
 
 
-
-
+// var askingNumber = confirm("Do you want to play a game?");
+//
+// if (askingNumber) {
+//     var inputNumber = Number(prompt("Please enter a number"));
+//     var isOddEven = (inputNumber & 1) ? "odd" : "even";
+//     var plusOneHundred = inputNumber + 100;
+//     var isPositiveNegative = (inputNumber > 0) ? "positive" : (inputNumber < 0) ? "negative": "zero";
+//
+//     alert("Your number is " + isOddEven);
+//     alert("Your number plus one hundred is " + plusOneHundred);
+//     alert("Your number is " + isPositiveNegative);
+//
+// } else {
+//     alert("Have a nice day!")
+// }
 
 /* ########################################################################## */
 
@@ -40,23 +55,49 @@
  * console.logging the function's return value
  */
 
+
+// function analyzeColor(inputColor) {
+//
+//     if (inputColor === "blue") {
+//         return "blue is the color of the sky";
+//
+//     } else if (inputColor === "red") {
+//         return "Strawberries are red";
+//
+//     } else if (inputColor === "cyan") {
+//         return "I don't know anything about cyan";
+//
+//     } else {
+//         return "I like that color";
+//     }
+// }
+
+// console.log(analyzeColor("blue"));
+// console.log(analyzeColor("red"));
+// console.log(analyzeColor("cyan"));
+
+
 // Don't change the next two lines!
 // These lines create two variables for you:
 // - `colors`: a list of the colors of the rainbow
 // - `randomColor`: contains a single random color value from the list (this
 //                  will contain a different color every time the page loads)
-var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
-var randomColor = colors[Math.floor(Math.random() * colors.length)];
-/**
- * TODO:
- * Pass the `randomColor` variable to your function and console.log the results.
- * You should see a different message every time you refresh the page
- */
+    var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+    var randomColor = colors[Math.floor(Math.random() * colors.length)];
+    /**
+     * TODO:
+     * Pass the `randomColor` variable to your function and console.log the results.
+     * You should see a different message every time you refresh the page
+     */
 
-/**
- * TODO:
- * Refactor your above function to use a switch-case statement
- */
+// console.log(analyzeColor("randomColor"));
+
+    /**
+     * TODO:
+     * Refactor your above function to use a switch-case statement
+     */
+
+
 
 /**
  * TODO:
@@ -64,6 +105,23 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * user to your `analyzeColor` function. Alert the return value from your
  * function to show it to the user.
  */
+
+var analyzeColor = prompt("What is your favorite color?");
+
+switch (analyzeColor) {
+    case "red":
+        alert("Strawberries are red");
+        break;
+    case "blue":
+        alert("blue is the color of the sky");
+        break;
+    case "cyan":
+        alert("I don't know anything about cyan");
+        break;
+    default:
+        alert(analyzeColor + " isn't my favorite, but that's cool.");
+        break;
+}
 
 /* ########################################################################## */
 
