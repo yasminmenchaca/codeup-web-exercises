@@ -71,7 +71,7 @@ console.log("conditionals.html");
 //         return "I like that color";
 //     }
 // }
-
+//
 // console.log(analyzeColor("blue"));
 // console.log(analyzeColor("red"));
 // console.log(analyzeColor("cyan"));
@@ -106,22 +106,22 @@ console.log("conditionals.html");
  * function to show it to the user.
  */
 
-var analyzeColor = prompt("What is your favorite color?");
+// var analyzeColor = prompt("What is your favorite color?");
 
-switch (analyzeColor) {
-    case "red":
-        alert("Strawberries are red");
-        break;
-    case "blue":
-        alert("blue is the color of the sky");
-        break;
-    case "cyan":
-        alert("I don't know anything about cyan");
-        break;
-    default:
-        alert(analyzeColor + " isn't my favorite, but that's cool.");
-        break;
-}
+// switch (analyzeColor) {
+//     case "red":
+//         alert("Strawberries are red");
+//         break;
+//     case "blue":
+//         alert("blue is the color of the sky");
+//         break;
+//     case "cyan":
+//         alert("I don't know anything about cyan");
+//         break;
+//     default:
+//         alert("Hmm, okay");
+//         break;
+// }
 
 /* ########################################################################## */
 
@@ -144,6 +144,35 @@ switch (analyzeColor) {
  * Test your function by passing it various values and checking for the expected
  * return value.
  */
+
+function calculateTotal(inputNumber) {
+
+
+    if (inputNumber === "0") {
+        return "Sorry, you don't get a discount";
+    } else if (inputNumber === 1) {
+        return "10%";
+    } else if (inputNumber === 2) {
+        return "25%";
+    } else if (inputNumber === 3) {
+        return "35%";
+    } else if (inputNumber === 4) {
+        return "50%";
+    } else if (inputNumber === 5) {
+        return "100%";
+    } else {
+        return "bye";
+    }
+}
+
+
+console.log(calculateTotal(1));
+console.log(calculateTotal(2));
+console.log(calculateTotal(3));
+console.log(calculateTotal(4));
+console.log(calculateTotal(5));
+console.log(calculateTotal(6));
+
 
 /**
  * TODO:
