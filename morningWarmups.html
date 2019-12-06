@@ -172,20 +172,30 @@
 
     // TODO: write a js function called seeYouLater that accepts a string. If the string is alligator, return "See you later alligator!", if the string is crocodile, return "After a while crocodile!", if the string is not either, return "So long!"
 
-    function seeYouLater(inputString) {
-        if (inputString === "alligator") {
-            return "See you later alligator!";
-        } else if (inputString === "crocodile") {
-            return "After a while crocodile!";
-        } else {
-            return "So long";
-        }
+    // function seeYouLater(inputString) {
+    //     if (inputString === "alligator") {
+    //         return "See you later alligator!";
+    //     } else if (inputString === "crocodile") {
+    //         return "After a while crocodile!";
+    //     } else {
+    //         return "So long";
+    //     }
+    // }
+    //
+    // console.log(seeYouLater("alligator")); //output: "See you later alligator!"
+    // console.log(seeYouLater("crocodile")); //output: "After a while crocodile!"
+    // console.log(seeYouLater("dog")); //output: "So Long"
+
+    // todo: write a js function that receives another function as a parameter & executes it, then call the function, and pass it an anonymous function as a argument
+
+    function functionA(callbackFunction) {
+        callbackFunction();
     }
 
-    console.log(seeYouLater("alligator")); //output: "See you later alligator!"
-    console.log(seeYouLater("crocodile")); //output: "After a while crocodile!"
-    console.log(seeYouLater("dog")); //output: "So Long"
+    functionA(function () {
+        alert("It works!");
 
+    });
 
 </script>
 </body>
