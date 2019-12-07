@@ -145,34 +145,32 @@ console.log("conditionals.html");
  * return value.
  */
 
-function calculateTotal(inputNumber) {
-
-
-    if (inputNumber === "0") {
-        return "Sorry, you don't get a discount";
-    } else if (inputNumber === 1) {
-        return "10%";
-    } else if (inputNumber === 2) {
-        return "25%";
-    } else if (inputNumber === 3) {
-        return "35%";
-    } else if (inputNumber === 4) {
-        return "50%";
-    } else if (inputNumber === 5) {
-        return "100%";
-    } else {
-        return "bye";
-    }
-}
-
-
-console.log(calculateTotal(1));
-console.log(calculateTotal(2));
-console.log(calculateTotal(3));
-console.log(calculateTotal(4));
-console.log(calculateTotal(5));
-console.log(calculateTotal(6));
-
+// function calculateTotal(luckyNumber, grandTotal){
+//     switch (luckyNumber){
+//         case 0:
+//             return grandTotal;
+//         case 1:
+//             return grandTotal * .9;
+//         case 2:
+//             return grandTotal * .75;
+//         case 3:
+//             return grandTotal * .65;
+//         case 4:
+//             return grandTotal * .5;
+//         case 5:
+//             return 0;
+//         default:
+//             return "Sorry, please enter an number between 0 and 5";
+//     }
+// }
+//
+// console.log(calculateTotal(10, 100)); // default
+// console.log(calculateTotal(0, 100)); // 100
+// console.log(calculateTotal(1, 100)); //90
+// console.log(calculateTotal(2, 100)); //75
+// console.log(calculateTotal(3, 100)); //65
+// console.log(calculateTotal(4, 100)); //50
+// console.log(calculateTotal(5, 100)); //0
 
 /**
  * TODO:
@@ -183,3 +181,8 @@ console.log(calculateTotal(6));
  */
 // Generate a random number between 0 and 6
 // var luckyNumber = Math.floor(Math.random() * 6);
+//
+// let totalBill = prompt("Enter your total amount");
+// alert("Thee lucky number is " + luckyNumber);
+// alert("Your original price was $"+ totalBill);
+// alert("Your discounted amount is $" + (calculateTotal(luckyNumber, totalBill)));
