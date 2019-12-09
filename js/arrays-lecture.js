@@ -26,11 +26,22 @@ var pets = ["Toby", "Princess", "Samson", "Jill", "Bubbles", "Malu", "Lily"];
 
 // // or
 
-var i=0;
-while (i<pets.length){
-    console.log(pets[i]);
-    i++
-}
+// var i=0;
+// while (i<pets.length){
+//     console.log(pets[i]);
+//     i++
+// }
+
+// pets[pets.length] = "Lily";
+// console.log(pets[pets.length-1]);
+
+
+// // for each iterator
+pets.forEach(function (pet, i, arr) {
+    console.log(pet);
+    // // or
+    // console.log(arr[i]);
+});
 
 /*
 
