@@ -51,6 +51,6 @@
 
     console.log("Sorting the planets array.");
     console.log(planets);
-    console.log(planets.sort()); //Sorting the planets array.
+    console.log(planets.sort());
 
 })();
