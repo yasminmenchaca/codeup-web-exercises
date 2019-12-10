@@ -35,12 +35,12 @@ console.log("hello from conditionals lec.js!");
 
 // var isRainy = true;
 
-//------example one:
+// ------example one:
 // if(isRainy === true){
 //     alert("It's raining!");
 // }
 
-//------example two:
+// //------example two:
 // if(isRainy){
 //     alert("It's raining!");
 // }
@@ -400,7 +400,7 @@ console.log("hello from conditionals lec.js!");
 //     }
 //     return weatherMessage;
 // }
-//
+
 // console.log(checkWeather("sunny"));
 // console.log(checkWeather("rainy"));
 // console.log(checkWeather("snowy"));
@@ -413,16 +413,16 @@ console.log("hello from conditionals lec.js!");
 //
 // switch(checkTrafficLight) {
 //     case "red":
-//         alert("STOP!");
+//         alert("Stop!");
 //         break;
 //     case "yellow":
-//         alert("Slow down and prepare to stop");
+//         alert("Slow Down");
 //         break;
 //     case "green":
-//         alert("don't stop");
+//         alert("Go");
 //         break;
 //     default:
-//         alert("keep it rolling");
+//         alert("Proceed with caution");
 //         break;
 // }
 
@@ -446,7 +446,7 @@ console.log("hello from conditionals lec.js!");
 //
 //     return trafficMessage;
 // }
-//
+
 // console.log(checkTraffic("red"));
 // console.log(checkTraffic("yellow"));
 // console.log(checkTraffic("green"));
