@@ -7,6 +7,7 @@ html, body, h1 {
     font-family: 'Roboto', sans-serif;
 }
 
+
 .parent {
     display: grid;
     grid-template-columns: 18.5% 1fr 20%;
