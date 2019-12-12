@@ -168,16 +168,19 @@
      *      ...
      */
 
-/*
+    // for (var i = 0; i < length, i++)
 
-    books.forEach(function (book) {
+
+/*
+    books.forEach(function (book, i) {
         console.log("Book # " + books.indexOf(book));
+        // console.log("Book # " + (i+1));
         console.log("Title: " + book.title);
         console.log("Author: " + book.author.firstName + " "+ book.author.lastName);
         console.log("---")
     });
-
 */
+
 
     /**
      * Bonus:
@@ -189,5 +192,25 @@
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+
+    var createBook = function (title, authorFirstName, authorLastName) {
+        var book = {};
+        book.title = title;
+        book.author = {};
+        book.author.firstName = authorFirstName;
+        book.author.lastName = authorLastName;
+        return book;
+    };
+
+    books.push(createBook("Javascript for Dummies", "Yasmin", "Menchaca"));
+
+    var showBookInfo = function (book, i) {
+        console.log("Book # " + books.indexOf(book));
+        // console.log("Book # " + (i+1));
+        console.log("Title: " + book.title);
+        console.log("Author: " + book.author.firstName + " " + book.author.lastName);
+        console.log("---")
+    };
+    books.forEach(showBookInfo);
 
 })();
