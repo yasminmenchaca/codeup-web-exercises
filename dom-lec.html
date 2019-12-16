@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dom Lecture</title>
+
+    <style>
+        .redBackground {
+            background-color: red;
+        }
+
+        .greenText {
+            color: green;
+        }
+
+        .purple {
+            color: purple;
+        }
+
+        .cyan {
+            color: cyan;
+        }
+
+    </style>
+
+</head>
+<body>
+<h1 id="header">Happy Holidays</h1>
+<h3>Wish List</h3>
+<ul id="wishList"></ul>
+<button id="button">Click Me!</button>
+<a id = "codeup" href="http://codeup.com">Codeup</a>
+<script>
+
+    // console.log(document);
+    // var header = document.getElementById("header");
+    // console.log(header);
+    //
+    // var thingIWant = ["Grilling Tools", "Nintendo Switch", "Raspberry Pi", "MacBook Pro 16-inch", "Book Case", "iPhone 11"];
+    //
+    //
+    // var wishList = document.getElementById("wishList");
+    // var htmlString = "";
+    // for (var i = 0; i < thingIWant.length; i++) {
+    //     if (i % 2 !== 0)
+    //         htmlString += "<li class = 'even'>" + thingIWant[i] + "</li>";
+    //     else
+    //         htmlString += "<li class = 'odd'>" + thingIWant[i] + "</li>";
+    // }
+    //
+    // wishList.innerHTML = htmlString;
+    // var evens = document.getElementsByClassName("even");
+    // // console.log("evens:" + evens);
+    //
+    // setTimeout(function () {
+    //     for (var i = 0; i < evens.length; i++) {
+    //         // console.log(evens[i]);
+    //         evens[i].innerHTML = "<em>Money</em>";
+    //         console.log(evens[i].innerHTML); // just the text displayed on screen
+    //     }
+    // }, 5000);
+    //
+    // var odds = document.getElementsByClassName("odd");
+    // for (var i = 0; i < odds.length; i++) {
+    //     odds[i].setAttribute("class", "odd redBackground greenText");
+    //     // odds[i].style.color = "white";
+    //     // odds[i].style["background-color"] = "green";
+    // }
+    //
+    // var codeupLink = document.getElementById("codeup").getAttribute("href");
+    // console.log(codeupLink);
+
+    // var lis = document.getElementsByTagName("li");
+    // console.log(lis);
+    // for (var i = 0; i < lis.length; i++) {
+    //     console.log(lis[i]);
+    // }
+
+    // var button = document.getElementById("button");
+    // console.log(button);
+    //
+    // // create a handler function
+    // var listener = function (event) {
+    //     alert('You clicked the button!');
+    // }
+    //
+    // // register the listener to handle clicks on btn1
+    // document.getElementById('btn1').addEventListener('click', listener, false);
+
+    // var clicks = 0;
+    // var button = document.getElementById("button");
+    // button.addEventListener("click", function () {
+    //     clicks++;
+    //     console.log ("button was clicked " + clicks + " times.");
+    // })
+
+    var clicks = 0;
+    var buttonClick = function(){
+        clicks++;
+        console.log("button was clicked " + clicks + " times")
+    }
+
+    var button = document.getElementById("button");
+    button.addEventListener("click",buttonClick);
+    button.addEventListener("mouseover", function(){
+        button.setAttribute("class", "purple");
+    })
+
+    button.addEventListener("mouseout", function(){
+        button.setAttribute("class","cyan");
+    })
+
+    setTimeout(function() {
+        button.removeEventListener("click", buttonClick);
+    }, 5000);
+
+</script>
+</body>
+</html>
