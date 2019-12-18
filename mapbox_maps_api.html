@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>mapbox_maps_api</title>
+    <!-- Mapbox CSS -->
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
+    <!-- Custom CSS -->
+    <style>
+
+        #map {
+            /* the width and height may be set to any size */
+            width: 100%;
+            height: 700px;
+        }
+
+        .mapboxgl-popup {
+            max-width: 400px;
+            font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+        }
+
+    </style>
+</head>
+<body>
+
+<h1>My Favorite Restaurants</h1>
+
+<!-- The HTML element that serves as the Mapbox container -->
+<div id='map'></div>
+
+<!-- Mapbox JS -->
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+<script src="js/keys.js"></script>
+<script src="js/mapbox-geocoder-utils.js"></script>
+
+<!-- Custom JS -->
+
+<script>
+
+    mapboxgl.accessToken = mapboxToken;
+
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v9',
+        zoom: 10,
+        center: [-98.4916, 29.4252]
+    });
+
+    var restaurantList = [
+        {
+            name: "Cullum's Attagirl Ice House",
+            coordinates: [-98.485092, 29.453187],
+            info: "Popular fried chicken specialist turning out plates & sandwiches, plus craft beer, in rustic digs."
+        },
+        {
+            name: "Sichuan House",
+            coordinates: [-98.623599, 29.471663],
+            info: "Humble eatery featuring Sichuan tapas, hot pots & mains such as pork belly & Kung Pao shrimp."
+        },
+        {
+            name: "The Dogfather",
+            coordinates: [-98.499568, 29.493525],
+            info: "Funky spot for inventive hot dog combinations (including vegan) with soft drinks & craft beer."
+        },
+        {
+            name: "Smoke Shack",
+            coordinates: [-98.466509, 29.461059],
+            info: "Hopping counter-service place with a rustic, retro feel offers BBQ sandwiches, platters & sides."
+        },
+        {
+            name: "Swine House Bodega",
+            coordinates: [-98.493482, 29.426026],
+            info: "Located inside the shared space at Pinch Boil House and Bia Bar, offering a savory breakfast and lunch sandwich menu, made with freshly-baked breads and high-quality meats, including less common, yet delicious cuts like navel short ribs."
+        },
+
+    ];
+
+    restaurantList.forEach(function (restaurant) {
+
+        var restaurantPopup = new mapboxgl.Popup()
+            .setHTML('<h2>' + restaurant.name + '</h2>' + '<hr>' + restaurant.info);
+
+        var restaurantMarker = new mapboxgl.Marker()
+            .setLngLat(restaurant.coordinates)
+            .setPopup(restaurantPopup)
+            .addTo(map);
+    });
+
+</script>
+
+</body>
+</html>
