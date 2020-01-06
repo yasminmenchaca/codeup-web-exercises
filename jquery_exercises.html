@@ -5,41 +5,54 @@
 </head>
 <body>
 
-<h1>Header!</h1>
+<h1 id="header">Header!</h1>
 
-    <div>
-        <ul>
-            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita necessitatibus possimus quibusdam,
-                similique voluptate voluptates.
-            </li>
-            <li>Lorem ipsum dolor sit.</li>
-            <li>Lorem ipsum dolor sit amet, consectetur adipisicing.</li>
-            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae.</li>
-            <li>Lorem ipsum dolor.</li>
-        </ul>
-    </div>
+<div>
+    <ul>
+        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita necessi.
+        </li>
+        <li>Lorem ipsum dolor sit.</li>
+        <li>Lorem ipsum dolor sit amet, consectetur adipisicing.</li>
+        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae.</li>
+        <li>Lorem ipsum dolor.</li>
+    </ul>
+</div>
 
-    <div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque debitis ducimus et ex explicabo iste nemo
-            quibusdam rem repellat vitae? Alias, assumenda ducimus ea fugiat iusto neque quisquam reiciendis vero.</p>
-    </div>
+<div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque debitis ducimus et ex explicabo iste nemo
+        quibusdam rem repellat vitae? Alias, assumenda ducimus ea fugiat iusto neque quisquam reiciendis vero.</p>
+</div>
 
-    <div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, earum.</p>
-    </div>
+<div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, earum.</p>
+</div>
 
-
+<!--        jquery link-->
 <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
 
 <script>
 
-    $('li').css('font-size', '20px');
+    $('#header').click(
+        function () {
+            $(this).css('background-color', '#FF0');
+        }
+    );
 
-    $('li, h1, p').css('background-color', 'limegreen');
+    $('p').dblclick(
+        function () {
+            $(this).css('font-size', '18px');
+        }
+    );
 
-    var contents = $('h1').html();
-    alert(contents);
-
+    $('li').hover(
+        function () {
+            $('li').css('color', 'red');
+        },
+        function () {
+            $('li').css('color', 'black');
+        }
+    );
 
 </script>
 
