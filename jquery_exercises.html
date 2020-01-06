@@ -5,11 +5,13 @@
 </head>
 <body>
 
-<h1 id="heading">Header!</h1>
+<h1 class="codeup">Header!</h1>
 
     <div class="unordered">
         <ul>
-            <li id="lorem">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita necessitatibus possimus quibusdam, similique voluptate voluptates.</li>
+            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita necessitatibus possimus quibusdam,
+                similique voluptate voluptates.
+            </li>
             <li>Lorem ipsum dolor sit.</li>
             <li>Lorem ipsum dolor sit amet, consectetur adipisicing.</li>
             <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae.</li>
@@ -17,20 +19,23 @@
         </ul>
     </div>
 
-    <div class="paragraph">
+    <div class="codeup">
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque debitis ducimus et ex explicabo iste nemo
             quibusdam rem repellat vitae? Alias, assumenda ducimus ea fugiat iusto neque quisquam reiciendis vero.</p>
+    </div>
+
+    <div>
+        <p class="codeup">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, earum.</p>
     </div>
 
 
 <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 
-    <script>
+<script>
 
-        var contents = $('#lorem').html();
-        alert(contents);
+    $('.codeup').css('border', '1px solid #F00');
 
-    </script>
+</script>
 
 </body>
 </html>
