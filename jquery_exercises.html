@@ -5,19 +5,43 @@
 </head>
 <body>
 <h1>jQuery</h1>
-<script src="https://code.jquery.com/jquery-2.2.4.js"></script>
 
-<script>
+<h1>New Year Resolutions</h1>
 
-"use strict";
+<div class="important">
+    <ul>
+        <li>Code more</li>
+        <li>Drink less coffee</li>
+        <li>Sleep more</li>
+    </ul>
+</div>
 
-$(document).ready(function() {
+<button id="button">Click ME</button>
 
-    // INSERT JAVASCRIPT CODE SAMPLE HERE
 
-    alert( 'Look, we are using jQuery!' );
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 
-});
+    <script>
 
-</script>
+        "use strict";
+
+        $(document).ready(function() {
+
+            // alert( 'Look, we are using jQuery!' );
+
+
+            // // JS version
+            // document.getElementById("button").addEventListener("click", function(){
+            //     alert ("you clicked the button")
+            // })
+
+        });
+
+        $("#button").click(function(){
+            alert("You clicked the button")
+        })
+
+        $('.important').css('background-color', 'yellow');
+
+    </script>
 </body>
