@@ -4,44 +4,33 @@
     <title>jQuery Exercises</title>
 </head>
 <body>
-<h1>jQuery</h1>
 
-<h1>New Year Resolutions</h1>
+<h1 id="heading">Header!</h1>
 
-<div class="important">
-    <ul>
-        <li>Code more</li>
-        <li>Drink less coffee</li>
-        <li>Sleep more</li>
-    </ul>
-</div>
+    <div class="unordered">
+        <ul>
+            <li id="lorem">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita necessitatibus possimus quibusdam, similique voluptate voluptates.</li>
+            <li>Lorem ipsum dolor sit.</li>
+            <li>Lorem ipsum dolor sit amet, consectetur adipisicing.</li>
+            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae.</li>
+            <li>Lorem ipsum dolor.</li>
+        </ul>
+    </div>
 
-<button id="button">Click ME</button>
+    <div class="paragraph">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque debitis ducimus et ex explicabo iste nemo
+            quibusdam rem repellat vitae? Alias, assumenda ducimus ea fugiat iusto neque quisquam reiciendis vero.</p>
+    </div>
 
 
 <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 
     <script>
 
-        "use strict";
-
-        $(document).ready(function() {
-
-            // alert( 'Look, we are using jQuery!' );
-
-
-            // // JS version
-            // document.getElementById("button").addEventListener("click", function(){
-            //     alert ("you clicked the button")
-            // })
-
-        });
-
-        $("#button").click(function(){
-            alert("You clicked the button")
-        })
-
-        $('.important').css('background-color', 'yellow');
+        var contents = $('#lorem').html();
+        alert(contents);
 
     </script>
+
 </body>
+</html>
