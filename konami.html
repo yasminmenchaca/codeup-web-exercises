@@ -2,34 +2,97 @@
 <html>
 <head>
     <title>Konami Code</title>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
+    <script src="https://kit.fontawesome.com/3f24a700e3.js" crossorigin="anonymous"></script>
     <style>
 
+        /*body, html {*/
+        /*    margin: 0;*/
+        /*    padding: 0;*/
+        /*    font-family: sans-serif;*/
+        /*}*/
+
+        /*.buttons {*/
+        /*    text-align: center;*/
+        /*    font-size: 2em;*/
+        /*    font-weight: bold;*/
+        /*}*/
+        @import url('https://fonts.googleapis.com/css?family=Lato:900&display=swap');
+
         body {
-            color: #444;
-            font: normal 16px Helvetica, Arial, sans-serif;
-            text-align: center;
+            background: black;
         }
 
-        .container {
+        h1 {
+            color: white;
             text-align: center;
-            font-size: 2em;
-            font-weight: bold;
+            font-family: 'Lato', sans-serif;
+
         }
 
-        .key {
-            border: .4rem solid black;
-            border-radius: .5rem;
-            margin: 1rem;
-            font-size: 1.5rem;
-            padding: 1rem .5rem;
-            transition: all .07s ease;
-            width: 10rem;
+        .keys {
+            font-family: 'Lato', sans-serif;
+            text-align: center;
+            width: 500px;
+            height: 200px;
+            margin: auto;
+        }
+
+        .arr {
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            background: grey;
+            color: white;
+            font-size: 50px;
+            border-right: 10px solid;
+            border-bottom: 10px solid;
+            border-left: 10px solid;
+            border-top: 10px solid;
+            display: inline-block;
+            margin: 5px;
+            transition: all .05s linear;
+
+        &
+        :active {
+            border-bottom: 8px solid;
+            text-shadow: 0 0 10px white, 0 0 10px white, 0 0 20px white;
+            transform: translate(0, 2px);
+        }
+
+        user-select: none
+
+        ;
+        }
+
+        .up {
+            position: relative;
+            top: -4px;
+        }
+
+        .pressed {
+            border-bottom: 8px solid;
+            text-shadow: 0 0 10px white;
+            transform: translate(0, 2px);
+        }
+
+        .names {
+            font-size: 10em;
+            font-family: 'Lato', sans-serif;
             text-align: center;
             color: white;
-            background: rgba(0, 0, 0, 0.4);
-            text-shadow: 0 0 .5rem black;
+        }
+
+        .b {
+            color: white;
+            font-size: 100px;
+            font-family: 'Lato', sans-serif;
+        }
+
+        .a {
+            color: white;
+            font-size: 100px;
+            font-family: 'Lato', sans-serif;
         }
 
     </style>
@@ -37,124 +100,114 @@
 </head>
 <body>
 
-<div class="container">
+<!--<div class="buttons">-->
+<h1>Konami Code</h1>
+<!--    <img src="img/Konami_Code.svg">-->
+<!--</div>-->
 
-    <h1>Konami Code</h1>
-
-    <div class="row">
-
-        <div class="up1 key col-sm-1">
-            <span>&uarr;</span>
-        </div>
-
-
-        <div class="up2 key col-sm-1">
-            <span>&uarr;</span>
-        </div>
-
-
-        <div class="down1 key col-sm-1">
-            <span>&darr;</span>
-        </div>
-
-
-        <div class="down2 key col-sm-1">
-            <span>&darr;</span>
-        </div>
-
-
-        <div class="left1 key col-sm-1">
-            <span>&larr;</span>
-        </div>
-
-
-        <div class="right1 key col-sm-1">
-            <span>&rarr;</span>
-        </div>
-
-
-        <div class="left2 key col-sm-1">
-            <span>&larr;</span>
-        </div>
-
-
-        <div class="right2 key col-sm-1">
-            <span>&rarr;</span>
-        </div>
-
-        <div class="letterB key col-sm-1">
-            <span>B</span>
-        </div>
-
-        <div class="letterA key col-sm-1">
-            <span>A</span>
-        </div>
-
-
-        <div class="enter key col-sm-1">
-            <span>Enter</span>
-        </div>
-
-    </div>
+<div class="keys">
+    <div class="up arr"><i class="fa fa-arrow-up"></i></div>
+    <br/>
+    <div class="left arr"><i class="fa fa-arrow-left"></i></div>
+    <div class="down arr"><i class="fa fa-arrow-down"></i></div>
+    <div class="right arr"><i class="fa fa-arrow-right"></i></div>
+</div>
+<br/>
+<br/>
+<br/>
+<br/>
+<div class="names">
+    <div class="uptext"></div>
+    <div class="downtext"></div>
+    <div class="lefttext"></div>
+    <div class="righttext"></div>
+    <div class="b"></div>
+    <div class="a"></div>
 </div>
 
 
 <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 
 <script>
+
     "use strict";
 
-    // a key map of allowed keys
-    var allowedKeys = {
-        37: 'left',
-        38: 'up',
-        39: 'right',
-        40: 'down',
-        65: 'a',
-        66: 'b',
-        13: 'enter'
-    };
 
-    // the 'official' Konami Code sequence
-    var konamiCode = ['up', 'up', 'down', 'down', 'left', 'right', 'left', 'right', 'b', 'a', 'enter'];
-
-    // a variable to remember the 'position' the user has reached so far.
-    var konamiCodePosition = 0;
-
-    // add keydown event listener
-    document.addEventListener('keydown', function (e) {
-        // get the value of the key code from the key map
-        var key = allowedKeys[e.keyCode];
-        // get the value of the required key from the konami code
-        var requiredKey = konamiCode[konamiCodePosition];
-
-        // compare the key with the required key
-        if (key == requiredKey) {
-
-            // move to the next key in the konami code sequence
-            konamiCodePosition++;
-
-            // if the last key is reached, activate cheats
-            if (konamiCodePosition == konamiCode.length) {
-                activateCheats();
-                konamiCodePosition = 0;
-            }
-        } else {
-            konamiCodePosition = 0;
+    $(document).keydown(function (e) {
+        if (e.which == 37) {
+            $('.left').addClass('pressed');
+            $('.lefttext').text('LEFT');
+            $('.left').css('transform', 'translate(0, 2px)');
+        } else if (e.which == 38) {
+            $('.up').addClass('pressed');
+            $('.uptext').text('UP');
+            $('.left').css('transform', 'translate(0, 2px)');
+            $('.down').css('transform', 'translate(0, 2px)');
+            $('.right').css('transform', 'translate(0, 2px)');
+        } else if (e.which == 39) {
+            $('.right').addClass('pressed');
+            $('.righttext').text('RIGHT');
+            $('.right').css('transform', 'translate(0, 2px)');
+        } else if (e.which == 40) {
+            $('.down').addClass('pressed');
+            $('.downtext').text('DOWN');
+            $('.down').css('transform', 'translate(0, 2px)');
+        } else if (e.which == 66) {
+            $('.b').text('B');
+        } else if (e.which == 65) {
+            $('.a').text('A');
         }
     });
 
-    function activateCheats() {
-        document.body.style.backgroundImage = "url('https://media3.giphy.com/media/WrHrrwqxCTTb7uKQQX/giphy.gif')";
+    $(document).keyup(function (e) {
+        if (e.which == 37) {
+            $('.left').removeClass('pressed');
+            $('.lefttext').text('');
+            $('.left').css('transform', 'translate(0, 0)');
+        } else if (e.which == 38) {
+            $('.up').removeClass('pressed');
+            $('.uptext').text('');
+            $('.left').css('transform', 'translate(0, 0)');
+            $('.down').css('transform', 'translate(0, 0)');
+            $('.right').css('transform', 'translate(0, 0)');
+        } else if (e.which == 39) {
+            $('.right').removeClass('pressed');
+            $('.righttext').text('');
+            $('.right').css('transform', 'translate(0, 0)');
+        } else if (e.which == 40) {
+            $('.down').removeClass('pressed');
+            $('.downtext').text('');
+            $('.down').css('transform', 'translate(0, 0)');
+        } else if (e.which == 66) {
+            $('.b').text('');
+        } else if (e.which == 65) {
+            $('.a').text('');
+        }
+    });
 
-        var audio = new Audio('sounds/metalgear.mp3');
-        audio.play();
-
-        alert("You have added 30 lives!");
+    function konami(fn) {
+        var input = "";
+        var pattern = "3838404037393739666513";
+        $(document).keydown(function (e) {
+            input += e.keyCode;
+            if (input.indexOf(pattern) !== -1) {
+                fn();
+                input = "";
+            }
+        });
     }
 
+    $(document).ready(function () {
+        konami(function () {
+            document.body.style.backgroundImage = "url('https://media3.giphy.com/media/WrHrrwqxCTTb7uKQQX/giphy.gif')";
+
+            var audio = new Audio('sounds/metalgear.mp3');
+            audio.play();
+
+            window.alert("You have added 30 lives!");
+        });
+    });
+
 </script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
 </html>
