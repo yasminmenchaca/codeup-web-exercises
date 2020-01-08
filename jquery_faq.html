@@ -215,11 +215,8 @@
         });
     });
 
-    $(document).ready(function () {
-        $('#highlight-last-li').click(function (event) {
-            event.preventDefault();
-            $('.national-park-facts ul li:last-child').toggleClass('highlight-li');
-        });
+    $('#highlight-last-li').click(function () {
+        $('.national-park-facts ul li:last-child').toggleClass('highlight-li')
     });
 
     $('h3').click(function () {
