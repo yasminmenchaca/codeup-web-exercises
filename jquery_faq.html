@@ -16,6 +16,18 @@
             font-weight: bold;
         }
 
+        .highlight-li {
+            background-color: #FF0;
+        }
+
+        .bold-li {
+            font-weight: bold;
+        }
+
+        .blue-li {
+            color: blue;
+        }
+
     </style>
 </head>
 <body>
@@ -25,6 +37,8 @@
 <button id="toggle-answer">Click to expand</button>
 <!--<h3><a href="#" id="toggle-answer">Click to toggle.</a></h3>-->
 
+
+<!--FAQ-->
 <dl>
 
     <dt>How do I obtain a park entrance pass?</dt>
@@ -130,8 +144,65 @@
         opportunities</a>.</p>
         </ul>
     </dd>
-
 </dl>
+
+
+<!--national parks-->
+
+<button id="highlight-last-li">Click to highlight last fact</button>
+
+
+<div class="national-park-facts">
+    <h3>Big Bend National Park Facts</h3>
+    <ul id="big-bend">
+        <li>The Rio Grande River serves both as the border of Big Bend National Park, as well as the international
+            border between the United States and Mexico. Within the park, this covers a distance of 118 miles. A
+            recently reopened border crossing at Boquillas allows park visitors to legally cross into Mexico.
+        </li>
+        <li>The name Big Bend comes from a large bend in the Rio Grande River along the park boundary.</li>
+        <li>The large range of elevations in the park contribute to its biological diversity. There are 56 species of
+            reptiles, 75 species of mammals, more than 450 species of birds, along with at least 1,200 species of
+            plants. Caverns.
+        </li>
+        <li>The lowest elevation found in Big Bend is 1,715 feet at the Rio Grande River and the highest elevation found
+            in Big Bend is 7,832 feet on Emory Peak.
+        </li>
+    </ul>
+    <h3>Kenai Fjords National Park Facts</h3>
+    <ul id="kenai-fjords">
+        <li>On November 16, 1978, Kenai Fjords National Monument was created along with 15 others. On December 2, 1980,
+            the monument was changed to a national park, along with all other Alaskan national parks, by the Alaska
+            Native Interests Land Conservation Act.
+        </li>
+        <li>Kenai Fjords has a large variety of birds, especially along the coastal areas. Many people come here and
+            take the cruises for the sole reason of bird watching. Puffins are particularly popular to look for.
+        </li>
+        <li>51% of the land in Kenai Fjords National Park is covered by ice.</li>
+        <li>The Exxon Valdez oil spill disaster in 1989 in Prince William Sound had a large effect on Kenai Fjords. Oil
+            can still be found on the coastline today.
+        </li>
+    </ul>
+    <h3>Yosemite National Park Facts</h3>
+    <ul id="yosemite">
+        <li>Yosemite National Park took a few steps to reach its present form. On June 30, 1864, President Abraham
+            Lincoln signed the bill creating the Yosemite Grant, given to the state of California to form Yosemite State
+            Park. On October 1, 1890 Congress passed the bill creating Yosemite National Park, but California retained
+            control of the valley and Mariposa Grove. Finally, in 1906, President Theodore Roosevelt signed the bill
+            that took back the valley and Mariposa Grove and added it to the national park.
+        </li>
+        <li>Yosemite was the third most visited national park in 2013, behind only <a
+                href="https://www.nps.gov/grca/index.htm">Grand Canyon</a> and <a
+                href="https://www.nps.gov/grsm/index.htm">Great Smoky Mountains</a>.
+        </li>
+        <li>The world famous Yosemite Valley, where most people spend their time, is only a tiny fraction of the park,
+            less than 1% of the total area. Nearly 95% of the park has been designated as wilderness.
+        </li>
+        <li>Yosemite Valley is a classic glacier-cut valley, carved out of the solid granite. Glaciers in Yosemite
+            Valley may have reached thicknesses of 4,000 feet or more.
+        </li>
+    </ul>
+</div>
+<!--</dl>-->
 
 <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
 <script>
@@ -142,6 +213,21 @@
             event.preventDefault();
             $('.invisible').toggleClass('visible');
         });
+    });
+
+    $(document).ready(function () {
+        $('#highlight-last-li').click(function (event) {
+            event.preventDefault();
+            $('.national-park-facts ul li:last-child').toggleClass('highlight-li');
+        });
+    });
+
+    $('h3').click(function () {
+        $(this).next().children().toggleClass('bold-li')
+    });
+
+    $('li').click(function () {
+        $(this).parent().children().first().toggleClass('blue-li')
     });
 
 </script>
