@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>jQuery FAQ</title>
+
     <style>
         .invisible {
             visibility: hidden;
@@ -16,22 +17,46 @@
             font-weight: bold;
         }
 
-        .highlighted {
+        .highlight-li {
             background-color: #FF0;
+        }
+
+        .bold-li {
+            font-weight: bold;
+        }
+
+        .blue-li {
+            color: blue;
+        }
+
+        .national-park-facts li {
+            display: none;
+        }
+
+        h2.hidden {
+            display: none
         }
 
     </style>
 </head>
 <body>
+<!--Newsletter-->
 
+<div class="newsletter">
+    <h1>Would you like to sign up for our newsletter?</h1>
+    <span>X</span>
+</div>
+
+
+<!--FAQ-->
 <h2>National Parks Service Frequently Asked Questions</h2>
 
-<h3><a href="#" id="toggle-answer">Click to toggle.</a></h3>
+<button id="toggle-answer">Click to show all</button>
 
 <dl>
 
     <dt>How do I obtain a park entrance pass?</dt>
-    <dd class="invisible"><a href="https://www.nps.gov/planyourvisit/fee-free-parks-state.htm">Fewer
+    <dd class="invisible"><p><a href="https://www.nps.gov/planyourvisit/fee-free-parks-state.htm">Fewer
         than one-third of the national parks charge entrance fees</a>. You can obtain park entrance passes by visiting a
         park site that charges an entrance fee. Entrance fee sites have passes available; we recommend calling a park
         prior
@@ -43,17 +68,20 @@
         4th Grade, Access, and Volunteer passes). Learn more about the <a
                 href="https://www.nps.gov/planyourvisit/passes.htm">America the Beautiful - The National Parks and
             Federal
-            Recreational Lands Pass</a>.
+            Recreational Lands Pass</a>.</p>
     </dd>
 
 
     <dt>Who is the director of the National Park Service?</dt>
-    <dd class="invisible">David Vela is the Deputy Director, exercising the authority of the Director of the National Park Service.</dd>
+    <dd class="invisible"><p>David Vela is the Deputy Director, exercising the authority of the Director of the National
+        Park Service.</p>
+    </dd>
 
     <dt>What government agency oversees the National Park Service?</dt>
-    <dd class="invisible">The National Park Service is a bureau of the <a href="https://www.doi.gov/index.cfm">Department of the
+    <dd class="invisible"><p>The National Park Service is a bureau of the <a href="https://www.doi.gov/index.cfm">Department
+        of the
         Interior</a>. Directly overseeing its operation is the department's Assistant Secretary for Fish, Wildlife and
-        Parks.
+        Parks.</p>
     </dd>
 
     <dt>How many employees are in the National Park Service?</dt>
@@ -65,31 +93,37 @@
     </dd>
 
     <dt>How old is the National Park System?</dt>
-    <dd class="invisible">The National Park Service was created by an act signed by President Woodrow Wilson on August 25, 1916.
+    <dd class="invisible"><p>The National Park Service was created by an act signed by President Woodrow Wilson on
+        August
+        25, 1916.
         Yellowstone National Park was established by an act signed by President Ulysses S. Grant on March 1, 1872, as
         the nation's first national park. View the National Park System <a
-                href="https://www.nps.gov/parkhistory/hisnps/NPSHistory/timeline_annotated.htm">timeline</a>.
+                href="https://www.nps.gov/parkhistory/hisnps/NPSHistory/timeline_annotated.htm">timeline</a>.</p>
     </dd>
 
     <dt>What is the origin of the National Park Service arrowhead?</dt>
-    <dd class="invisible">The arrowhead was authorized as the official National Park Service emblem by the Secretary of the Interior
+    <dd class="invisible"><p>The arrowhead was authorized as the official National Park Service emblem by the Secretary
+        of
+        the Interior
         on July 20, 1951. The components of the arrowhead may have been inspired by key attributes of the National
         Park System, with the sequoia tree and bison representing vegetation and wildlife, the mountains and water
         representing scenic and recreational values, and the arrowhead itself representing historical and
         archeological values. <a href="https://www.nps.gov/hfc/services/identity/identity-history.cfm"
         >Read
-            more about the history of the arrowhead and other elements of NPS visual design</a>.<br>
-        <br>
+            more about the history of the arrowhead and other elements of NPS visual design</a>.
+        <br><br>
         The NPS allows limited use of the NPS arrowhead when doing so contributes to our work. <a
                 href="https://www.nps.gov/subjects/partnerships/arrowhead-requests.htm">Learn how to request permission
             to use the
-            arrowhead</a>.
+            arrowhead</a>.</p>
 
     <dt>How many areas are in the National Park System?</dt>
-    <dd class="invisible">The system includes 419 areas covering more than 85 million acres in every state, the District of Columbia,
+    <dd class="invisible"><p>The system includes 419 areas covering more than 85 million acres in every state, the
+        District
+        of Columbia,
         American Samoa, Guam, Puerto Rico, and the Virgin Islands. These areas include national parks, monuments,
         battlefields, military parks, historical parks, historic sites, lake shores, seashores, recreation areas, scenic
-        rivers and trails, and the White House. Learn more about national park designations.
+        rivers and trails, and the White House. Learn more about national park designations.</p>
     </dd>
 
     <dt>What is the largest national park site? Smallest?</dt>
@@ -104,35 +138,123 @@
         </ul>
     </dd>
 
-    <dt>How many people visit the national parks?</dt>
-    <dd class="invisible">
-        <ul>
-            <li>Total recreation visitors to the national parks in 2018: 318,211,833.</li>
-        </ul>
+    <dt>How do I reserve a tour in a park?</dt>
+    <dd class="invisible"><p>
+        You can book some park tours through Recreation.gov such as WWII Valor in the Pacific (Pearl Harbor), many
+        Mammoth Cave National Park cave tours, Independence National Historical Park tours, and more. Not all parks
+        participate in this reservation service. For more information on tours offered at a specific park, please see
+        the park search.</p>
     </dd>
 
-    <dt>What is the National Park Service budget?</dt>
-    <dd class="invisible">
-        <ul>
-            <li>Fiscal Year (FY) 2014 Enacted: $2.98 billion</li>
-            <li>FY 2015 Enacted: $2.615 billion</li>
-            <li>FY 2016 Enacted:$2.851 billion</li>
-            <li>FY 2017 Enacted: $2.932 billion</li>
+    <dt>How do I make reservations for camping/lodging in national parks?</dt>
+    <dd class="invisible"><p>
+        For campground reservations, <a href="https://www.recreation.gov/">visit
+        Recreation.gov</a>. Not all parks participate in this service; many campgrounds are first come, first served.
+        For more information on specific camping and lodging services offered at the park(s) of your interest, please
+        check <a href="https://www.nps.gov/findapark/index.htm">specific park websites</a>. You
+        can also learn more about <a href="https://www.nps.gov/subjects/camping/index.htm">camping
+        in national parks</a> and find a <a href="https://www.nps.gov/subjects/camping/campground.htm">map of parks with
+        camping
+        opportunities</a>.</p>
         </ul>
     </dd>
-
 </dl>
+
+
+<!--national parks-->
+
+<button id="highlight-last-li">Click to highlight last fact</button>
+
+<div class="national-park-facts">
+    <h3>Big Bend National Park Facts</h3>
+    <ul>
+        <li>The Rio Grande River serves both as the border of Big Bend National Park, as well as the international
+            border between the United States and Mexico. Within the park, this covers a distance of 118 miles. A
+            recently reopened border crossing at Boquillas allows park visitors to legally cross into Mexico.
+        </li>
+        <li>The name Big Bend comes from a large bend in the Rio Grande River along the park boundary.</li>
+        <li>The large range of elevations in the park contribute to its biological diversity. There are 56 species of
+            reptiles, 75 species of mammals, more than 450 species of birds, along with at least 1,200 species of
+            plants. Caverns.
+        </li>
+        <li>The lowest elevation found in Big Bend is 1,715 feet at the Rio Grande River and the highest elevation found
+            in Big Bend is 7,832 feet on Emory Peak.
+        </li>
+    </ul>
+    <h3>Kenai Fjords National Park Facts</h3>
+    <ul>
+        <li>On November 16, 1978, Kenai Fjords National Monument was created along with 15 others. On December 2, 1980,
+            the monument was changed to a national park, along with all other Alaskan national parks, by the Alaska
+            Native Interests Land Conservation Act.
+        </li>
+        <li>Kenai Fjords has a large variety of birds, especially along the coastal areas. Many people come here and
+            take the cruises for the sole reason of bird watching. Puffins are particularly popular to look for.
+        </li>
+        <li>51% of the land in Kenai Fjords National Park is covered by ice.</li>
+        <li>The Exxon Valdez oil spill disaster in 1989 in Prince William Sound had a large effect on Kenai Fjords. Oil
+            can still be found on the coastline today.
+        </li>
+    </ul>
+    <h3>Yosemite National Park Facts</h3>
+    <ul>
+        <li>Yosemite National Park took a few steps to reach its present form. On June 30, 1864, President Abraham
+            Lincoln signed the bill creating the Yosemite Grant, given to the state of California to form Yosemite State
+            Park. On October 1, 1890 Congress passed the bill creating Yosemite National Park, but California retained
+            control of the valley and Mariposa Grove. Finally, in 1906, President Theodore Roosevelt signed the bill
+            that took back the valley and Mariposa Grove and added it to the national park.
+        </li>
+        <li>Yosemite was the third most visited national park in 2013, behind only <a
+                href="https://www.nps.gov/grca/index.htm">Grand Canyon</a> and <a
+                href="https://www.nps.gov/grsm/index.htm">Great Smoky Mountains</a>.
+        </li>
+        <li>The world famous Yosemite Valley, where most people spend their time, is only a tiny fraction of the park,
+            less than 1% of the total area. Nearly 95% of the park has been designated as wilderness.
+        </li>
+        <li>Yosemite Valley is a classic glacier-cut valley, carved out of the solid granite. Glaciers in Yosemite
+            Valley may have reached thicknesses of 4,000 feet or more.
+        </li>
+    </ul>
+
+</div>
+<!--</dl>-->
+
+<h2 class="hidden">
+    Please register to continue.
+</h2>
+
 <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
 <script>
-        "use strict";
+    "use strict";
 
-        $(document).ready(function() {
-            $('#toggle-answer').click(function(event) {
-                event.preventDefault();
-                $('.invisible').toggleClass('visible');
-            });
-        });
+    $('#toggle-answer').click(function () {
+        $('.invisible').toggleClass('visible');
+    });
 
+    $('#highlight-last-li').click(function () {
+        $('.national-park-facts ul li:last-child').toggleClass('highlight-li')
+    });
+
+    // $('h3').click(function () {
+    //     $(this).next().children().toggleClass('bold-li')
+    // });
+
+    $('li').click(function () {
+        $(this).parent().children().first().toggleClass('blue-li')
+    });
+
+    $('.newsletter span').click(function () {
+        $('.newsletter').toggle();
+    });
+
+    $('h3').click(function () {
+        $(this).next().children().slideToggle();
+        $(this).next().children().toggleClass('bold-li')
+
+    });
+
+    $(document).ready(function () {
+        $('h2.hidden').fadeIn(8000).removeClass('hidden');
+    });
 </script>
 </body>
 </html>
