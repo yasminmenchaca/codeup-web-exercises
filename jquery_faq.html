@@ -28,17 +28,30 @@
             color: blue;
         }
 
+        .national-park-facts li {
+            display: none;
+        }
+
+        h2.hidden {
+            display: none
+        }
+
     </style>
 </head>
 <body>
+<!--Newsletter-->
 
-<h2>National Parks Service Frequently Asked Questions</h2>
-
-<button id="toggle-answer">Click to expand</button>
-<!--<h3><a href="#" id="toggle-answer">Click to toggle.</a></h3>-->
+<div class="newsletter">
+    <h1>Would you like to sign up for our newsletter?</h1>
+    <span>X</span>
+</div>
 
 
 <!--FAQ-->
+<h2>National Parks Service Frequently Asked Questions</h2>
+
+<button id="toggle-answer">Click to show all</button>
+
 <dl>
 
     <dt>How do I obtain a park entrance pass?</dt>
@@ -151,10 +164,9 @@
 
 <button id="highlight-last-li">Click to highlight last fact</button>
 
-
 <div class="national-park-facts">
     <h3>Big Bend National Park Facts</h3>
-    <ul id="big-bend">
+    <ul>
         <li>The Rio Grande River serves both as the border of Big Bend National Park, as well as the international
             border between the United States and Mexico. Within the park, this covers a distance of 118 miles. A
             recently reopened border crossing at Boquillas allows park visitors to legally cross into Mexico.
@@ -169,7 +181,7 @@
         </li>
     </ul>
     <h3>Kenai Fjords National Park Facts</h3>
-    <ul id="kenai-fjords">
+    <ul>
         <li>On November 16, 1978, Kenai Fjords National Monument was created along with 15 others. On December 2, 1980,
             the monument was changed to a national park, along with all other Alaskan national parks, by the Alaska
             Native Interests Land Conservation Act.
@@ -183,7 +195,7 @@
         </li>
     </ul>
     <h3>Yosemite National Park Facts</h3>
-    <ul id="yosemite">
+    <ul>
         <li>Yosemite National Park took a few steps to reach its present form. On June 30, 1864, President Abraham
             Lincoln signed the bill creating the Yosemite Grant, given to the state of California to form Yosemite State
             Park. On October 1, 1890 Congress passed the bill creating Yosemite National Park, but California retained
@@ -201,32 +213,49 @@
             Valley may have reached thicknesses of 4,000 feet or more.
         </li>
     </ul>
+
 </div>
 <!--</dl>-->
+
+<h2 class="hidden">
+    Please register to continue.
+</h2>
 
 <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
 <script>
     "use strict";
 
-    $(document).ready(function () {
-        $('#toggle-answer').click(function (event) {
-            event.preventDefault();
-            $('.invisible').toggleClass('visible');
-        });
+    $('#toggle-answer').click(function () {
+        $('.invisible').toggleClass('visible');
     });
 
     $('#highlight-last-li').click(function () {
         $('.national-park-facts ul li:last-child').toggleClass('highlight-li')
     });
 
-    $('h3').click(function () {
-        $(this).next().children().toggleClass('bold-li')
-    });
+    // $('h3').click(function () {
+    //     $(this).next().children().toggleClass('bold-li')
+    // });
 
     $('li').click(function () {
         $(this).parent().children().first().toggleClass('blue-li')
     });
 
+    $('.newsletter span').click(function () {
+        $('.newsletter').toggle();
+    });
+
+    $('h3').click(function () {
+        $(this).next().children().slideToggle();
+        $(this).next().children().toggleClass('bold-li')
+
+    });
+
+    $(document).ready(function () {
+        $('h2.hidden').fadeIn(8000).removeClass('hidden');
+    });
+
 </script>
+
 </body>
 </html>
