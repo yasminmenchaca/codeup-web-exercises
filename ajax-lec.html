@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax Lecture</title>
+</head>
+<body>
+<h1>Ajax Lecture</h1>
+
+<script src="https://code.jquery.com/jquery-3.4.1.js">
+</script>
+
+<script>
+
+    // $.ajax("https://swapi.co/api/people/1/")
+    //     .done(function (obj) {
+    //         console.log(obj.name);
+    //     });
+
+    // $.ajax("https://pokeapi.co/api/v2/pokemon/pikachu")
+    //     .done(function (resp) {
+    //         console.log(resp.name);
+    //     });
+
+
+    // // Takes in a function that is called when the request completes successfully.
+    $.ajax("https://pokeapi.co/api/v2/pokemon/800")
+        .done(function (data, status, jqXhr) {
+            console.log(data.name);
+            console.log(status);
+            console.log(jqXhr);
+        })
+        // // Takes in a function that is called when a request completed with an error
+        .fail(function (jqXhr, status, error) {
+            console.log(("call failed"));
+            console.log(status);
+            console.log(error);
+        })
+
+        // // Takes in a function that is called for both failed and successful requests
+        .always(function () {
+            console.log("always");
+        })
+
+</script>
+</body>
+</html>
