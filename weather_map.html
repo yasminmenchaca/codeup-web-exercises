@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #ACDBFD;
+        }
+
+        /*.card-body {*/
+        /*    height: auto;*/
+        /*}*/
+
+    </style>
+
+
+    <title>Weather Map</title>
+
+</head>
+<body>
+<h1>Weather Application</h1>
+
+<div class="container text-center">
+    <div class="row">
+        <div class="col-sm-4">
+            <div id="mainDiv"></div>
+        </div>
+
+        <div class="col-sm-4">
+            <div id="mainDiv2"></div>
+        </div>
+
+        <div class="col-sm-4">
+            <div id="mainDiv3"></div>
+        </div>
+
+    </div>
+</div>
+
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+<script src = 'js/skycons.js'></script>
+<script src='js/keys.js'></script>
+<script>
+    (function () {
+        "use strict";
+
+        // var weatherIcons = [
+        //     {
+        //         condition: 'clear-day',
+        //         imageURI:'icons/Sun.svg',
+        //     },
+        //     {
+        //         condition: 'clear-night',
+        //         imageURI:'icons/Moon.svg',
+        //     },
+        //     {
+        //         condition: 'rain',
+        //         imageURI:'icons/Cloud-Rain.svg',
+        //     },
+        //     {
+        //         condition: 'snow',
+        //         imageURI:'icons/Cloud-Snow.svg',
+        //     },
+        //     {
+        //         condition: 'sleet',
+        //         imageURI:'icons/Cloud-Hail.svg',
+        //     },
+        //     {
+        //         condition: 'wind',
+        //         imageURI:'icons/Wind.svg',
+        //     },
+        //     {
+        //         condition: 'fog',
+        //         imageURI:'icons/Cloud-Fog.svg',
+        //     },
+        //     {
+        //         condition: 'cloudy',
+        //         imageURI:'icons/Cloud.svg',
+        //     },
+        //     {
+        //         condition: 'partly-cloudy-day',
+        //         imageURI:'icons/Cloud-Sun.svg',
+        //     },
+        //     {
+        //         condition: 'partly-cloudy-night',
+        //         imageURI:'icons/Cloud-Moon.svg',
+        //     }
+        // ];
+
+
+        // // Pulling Weather
+        $.ajax('https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/' + darkSkyKey + '/29.4241,-98.4936').done(function (data) {
+
+            // console.log(data);
+
+
+            $('#mainDiv').append(
+                // '<div class="container">' +
+                // '<div class="row">' +
+                // '<div class="col-sm-4">' +
+                '<div class="card">' +
+                '<div class="card-body">' +
+                '<h5 class="card-title">' +
+                Math.floor(data.daily.data[0].temperatureHigh) +
+                '&#176' +
+                '/' +
+                Math.floor(data.daily.data[0].temperatureLow) +
+                '&#176' +
+                '</h5>' +
+                '<br>' +
+                '<strong> Currently: </strong>' + data.currently.summary +
+                '<br>' +
+                '<strong>Humidity: </strong>' + (data.currently.humidity * 100) + '%' +
+                '<br>' +
+                '<strong>Wind: </strong>' + Math.floor(data.currently.windSpeed) + ' MPH' +
+                '<br>' +
+                '<strong>Pressure: </strong>' + data.currently.pressure +
+                // '</div>' +
+                // '</div>' +
+                // '</div>' +
+                '</div>' +
+                '</div>');
+
+            $('#mainDiv2').append(
+                // '<div class="container">' +
+                // '<div class="row">' +
+                // '<div class="col-sm-4">' +
+                '<div class="card">' +
+                '<div class="card-body">' +
+                '<h5 class="card-title">' +
+                Math.floor(data.daily.data[1].temperatureHigh) +
+                '&#176' +
+                '/' +
+                Math.floor(data.daily.data[1].temperatureLow) +
+                '&#176' +
+                '</h5>' +
+                '<br>' +
+                '<strong>Forecast: </strong>' + data.daily.data[1].summary +
+                '<br>' +
+                '<strong>Humidity: </strong>' + (data.daily.data[1].humidity * 100) + '%' +
+                '<br>' +
+                '<strong>Wind: </strong>' + Math.floor(data.daily.data[1].windSpeed) + ' MPH' +
+                '<br>' +
+                '<strong>Pressure: </strong>' + data.daily.data[1].pressure +
+                // '</div>' +
+                // '</div>' +
+                // '</div>' +
+                // '</div>' +
+                '</div>' +
+                '</div>');
+
+            $('#mainDiv3').append(
+                // '<div class="container">' +
+                // '<div class="row">' +
+                // '<div class="col-sm-4">' +
+                '<div class="card">' +
+                '<div class="card-body">' +
+                '<h5 class="card-title">' +
+                Math.floor(data.daily.data[2].temperatureHigh) +
+                '&#176' +
+                '/' +
+                Math.floor(data.daily.data[2].temperatureLow) +
+                '&#176' +
+                '</h5>' +
+                '<br>' +
+                '<strong>Forecast: </strong>' + data.daily.data[2].summary +
+                '<br>' +
+                '<strong>Humidity: </strong>' + (data.daily.data[2].humidity * 100) + '%' +
+                '<br>' +
+                '<strong>Wind: </strong>' + Math.floor(data.daily.data[2].windSpeed) + ' MPH' +
+                '<br>' +
+                '<strong>Pressure: </strong>' + data.daily.data[2].pressure +
+                // '</div>' +
+                // '</div>' +
+                // '</div>' +
+                '</div>' +
+                '</div>');
+
+
+
+            // // // Converting Time
+            // var dateObject = new Date(data.currently.time * 1000);
+            // console.log(dateObject.toString());
+        });
+
+    })();
+
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous">
+</script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous">
+</script>
+
+</body>
+</html>
