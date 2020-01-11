@@ -5,21 +5,55 @@ $.ajax('https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/' +
 
     console.log(data);
 
+    // // Converting Time
+    var dateObject = new Date(data.daily.data[0].time * 1000);
+    // console.log(dateObject.toString());
+
+    var dateTomorrow = new Date(data.daily.data[1].time * 1000);
+
+    var dateDayAfter = new Date(data.daily.data[2].time * 1000);
+
+    var weekday = new Array(7);
+    weekday[0] = "Sunday";
+    weekday[1] = "Monday";
+    weekday[2] = "Tuesday";
+    weekday[3] = "Wednesday";
+    weekday[4] = "Thursday";
+    weekday[5] = "Friday";
+    weekday[6] = "Saturday";
+
+    var todayDay = weekday[dateObject.getDay()];
+    console.log(todayDay);
+
+    var tomorrowDay = weekday[dateTomorrow.getDay()];
+    console.log(tomorrowDay);
+
+    var afterDay = weekday[dateDayAfter.getDay()];
+    console.log(afterDay);
+
+
     $('#mainDiv').append(
         '<div class="card-body text-center">' +
         '<h1 class="card-title">' +
-        Math.floor(data.daily.data[0].temperatureHigh) +
-        '&#176' +
-        '/' +
-        Math.floor(data.daily.data[0].temperatureLow) +
-        '&#176' +
+        // Math.floor(data.daily.data[0].temperatureHigh) +
+        // '&#176' +
+        // '/' +
+        '<strong> Right Now </strong>' +
+        '<hr>' +
+        '<strong> Current Temp: </strong>' + (data.currently.temperature).toFixed() +
+        '&#176F' +
+        // Math.floor(data.daily.data[0].temperatureLow) +
+        // '&#176' +
         '</h1>' +
         // '<br>' +
         '<div id="icon">' +
         '</div>' +
-        '<strong>Forecast: </strong>' + data.currently.summary +
+        '<strong> Feels Like: </strong>' + (data.currently.apparentTemperature).toFixed() +
+        '&#176F' +
         '<br>' +
-        '<strong>Humidity: </strong>' + (data.currently.humidity * 100).toFixed() + '%' +
+        '<strong> Conditions: </strong>' + data.currently.summary +
+        '<br>' +
+        '<strong>Humidity: </strong>' + (data.currently.humidity * 100) + '%' +
         '<br>' +
         '<strong>Wind: </strong>' + Math.floor(data.currently.windSpeed) + ' MPH' +
         '<br>' +
@@ -57,9 +91,67 @@ $.ajax('https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/' +
         $('#icon').html('<img src="icons/wi-night-partly-cloudy.svg">')
     }
 
+    $('#todayDiv').append(
+        '<div class="card-body text-center">' +
+        '<h1 class="card-title">' +
+        '<strong> Today </strong>' +
+        '<hr>' +
+        Math.floor(data.daily.data[0].temperatureHigh) +
+        '&#176' +
+        '/' +
+        Math.floor(data.daily.data[0].temperatureLow) +
+        '&#176' +
+        '</h1>' +
+        // '<br>' +
+        '<div id="todayIcon">' +
+        '</div>' +
+        '<strong>Forecast: </strong>' + data.daily.data[0].summary +
+        '<br>' +
+        '<strong>Humidity: </strong>' + (data.daily.data[0].humidity * 100) + '%' +
+        '<br>' +
+        '<strong>Wind: </strong>' + Math.floor(data.daily.data[0].windSpeed) + ' MPH' +
+        '<br>' +
+        '<strong>Pressure: </strong>' + data.daily.data[0].pressure.toFixed() +
+        '</div>');
+
+
+    if ((data.daily.data[0].icon) === "cloudy") {
+        $('#todayIcon').html('<img src="icons/wi-cloudy.svg">')
+    }
+    if ((data.daily.data[0].icon) === "clear-day") {
+        $('#todayIcon').html('<img src="icons/wi-day-sunny.svg">')
+    }
+    if ((data.daily.data[0].icon) === "clear-night") {
+        $('#todayIcon').html('<img src="icons/wi-night-clear.svg">')
+    }
+    if ((data.daily.data[0].icon) === "rain") {
+        $('#todayIcon').html('<img src="icons/wi-rain.svg">')
+    }
+    if ((data.daily.data[0].icon) === "snow") {
+        $('#todayIcon').html('<img src="icons/wi-snow.svg">')
+    }
+    if ((data.daily.data[0].icon) === "sleet") {
+        $('#todayIcon').html('<img src="icons/wi-sleet.svg">')
+    }
+    if ((data.daily.data[0].icon) === "wind") {
+        $('#todayIcon').html('<img src="icons/wi-windy.svg">')
+    }
+    if ((data.daily.data[0].icon) === "fog") {
+        $('#todayIcon').html('<img src="icons/wi-fog.svg">')
+    }
+    if ((data.daily.data[0].icon) === "partly-cloudy-day") {
+        $('#todayIcon').html('<img src="icons/wi-day-sunny-overcast.svg">')
+    }
+    if ((data.daily.data[0].icon) === "partly-cloudy-night") {
+        $('#todayIcon').html('<img src="icons/wi-night-partly-cloudy.svg">')
+    }
+
+
     $('#mainDiv2').append(
         '<div class="card-body text-center">' +
         '<h1 class="card-title">' +
+        '<strong>' + tomorrowDay + '</strong>' +
+        '<hr>' +
         Math.floor(data.daily.data[1].temperatureHigh) +
         '&#176' +
         '/' +
@@ -71,7 +163,7 @@ $.ajax('https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/' +
         '</div>' +
         '<strong>Forecast: </strong>' + data.daily.data[1].summary +
         '<br>' +
-        '<strong>Humidity: </strong>' + (data.daily.data[1].humidity * 100).toFixed() + '%' +
+        '<strong>Humidity: </strong>' + (data.daily.data[1].humidity * 100) + '%' +
         '<br>' +
         '<strong>Wind: </strong>' + Math.floor(data.daily.data[1].windSpeed) + ' MPH' +
         '<br>' +
@@ -113,6 +205,8 @@ $.ajax('https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/' +
     $('#mainDiv3').append(
         '<div class="card-body text-center">' +
         '<h1 class="card-title">' +
+        '<strong>' + afterDay + '</strong>' +
+        '<hr>' +
         Math.floor(data.daily.data[2].temperatureHigh) +
         '&#176' +
         '/' +
@@ -124,7 +218,7 @@ $.ajax('https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/' +
         '</div>' +
         '<strong>Forecast: </strong>' + data.daily.data[2].summary +
         '<br>' +
-        '<strong>Humidity: </strong>' + (data.daily.data[2].humidity * 100).toFixed() + '%' +
+        '<strong>Humidity: </strong>' + (data.daily.data[2].humidity * 100) + '%' +
         '<br>' +
         '<strong>Wind: </strong>' + Math.floor(data.daily.data[2].windSpeed) + ' MPH' +
         '<br>' +
@@ -162,9 +256,6 @@ $.ajax('https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/' +
         $('#icon3').html('<img src="icons/wi-night-partly-cloudy.svg">')
     }
 
-    // // // Converting Time
-    // var dateObject = new Date(data.currently.time * 1000);
-    // console.log(dateObject.toString());
 
     // Temperature Converter
     function fToC(fahrenheit) {
