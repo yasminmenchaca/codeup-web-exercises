@@ -1,9 +1,39 @@
 "use strict";
 
+// mapbox
+
+mapboxgl.accessToken = mapboxToken;
+
+var coordinates = document.getElementById('coordinates');
+var map = new mapboxgl.Map({
+container: 'map',
+style: 'mapbox://styles/mapbox/streets-v11',
+center: [0, 0],
+zoom: 2
+});
+
+var marker = new mapboxgl.Marker({
+draggable: true
+})
+.setLngLat([0, 0])
+.addTo(map);
+
+function onDragEnd() {
+var lngLat = marker.getLngLat();
+coordinates.style.display = 'block';
+coordinates.innerHTML =
+'Longitude: ' + lngLat.lng + '<br />Latitude: ' + lngLat.lat;
+}
+
+marker.on('dragend', onDragEnd);
+
+// console.log(marker._lngLat.lat);
+// console.log(marker._lngLat.lng);
+
 // // Pulling Weather
 $.ajax('https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/' + darkSkyKey + '/29.4241,-98.4936').done(function (data) {
 
-    console.log(data);
+    // console.log(data);
 
     // // Converting Time
     var dateObject = new Date(data.daily.data[0].time * 1000);
@@ -23,13 +53,13 @@ $.ajax('https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/' +
     weekday[6] = "Saturday";
 
     var todayDay = weekday[dateObject.getDay()];
-    console.log(todayDay);
+    // console.log(todayDay);
 
     var tomorrowDay = weekday[dateTomorrow.getDay()];
-    console.log(tomorrowDay);
+    // console.log(tomorrowDay);
 
     var afterDay = weekday[dateDayAfter.getDay()];
-    console.log(afterDay);
+    // console.log(afterDay);
 
 
     $('#mainDiv').append(
@@ -266,13 +296,3 @@ $.ajax('https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/' +
     }
 
 });
-
-mapboxgl.accessToken = mapboxToken;
-
-var map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v9',
-    zoom: 10.10,
-    center: [-98.493482, 29.426026]
-});
-
