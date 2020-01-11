@@ -6,7 +6,6 @@ $.ajax('https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/' +
     console.log(data);
 
     $('#mainDiv').append(
-        // '<div class="card">' +
         '<div class="card-body text-center">' +
         '<h1 class="card-title">' +
         Math.floor(data.daily.data[0].temperatureHigh) +
@@ -20,12 +19,11 @@ $.ajax('https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/' +
         '</div>' +
         '<strong>Forecast: </strong>' + data.currently.summary +
         '<br>' +
-        '<strong>Humidity: </strong>' + (data.currently.humidity * 100) + '%' +
+        '<strong>Humidity: </strong>' + (data.currently.humidity * 100).toFixed() + '%' +
         '<br>' +
         '<strong>Wind: </strong>' + Math.floor(data.currently.windSpeed) + ' MPH' +
         '<br>' +
         '<strong>Pressure: </strong>' + data.currently.pressure.toFixed() +
-        // '</div>' +
         '</div>');
 
     if ((data.currently.icon) === "cloudy") {
@@ -60,7 +58,6 @@ $.ajax('https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/' +
     }
 
     $('#mainDiv2').append(
-        // '<div class="card">' +
         '<div class="card-body text-center">' +
         '<h1 class="card-title">' +
         Math.floor(data.daily.data[1].temperatureHigh) +
@@ -74,12 +71,11 @@ $.ajax('https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/' +
         '</div>' +
         '<strong>Forecast: </strong>' + data.daily.data[1].summary +
         '<br>' +
-        '<strong>Humidity: </strong>' + (data.daily.data[1].humidity * 100) + '%' +
+        '<strong>Humidity: </strong>' + (data.daily.data[1].humidity * 100).toFixed() + '%' +
         '<br>' +
         '<strong>Wind: </strong>' + Math.floor(data.daily.data[1].windSpeed) + ' MPH' +
         '<br>' +
         '<strong>Pressure: </strong>' + data.daily.data[1].pressure.toFixed() +
-        // '</div>' +
         '</div>');
 
 
@@ -115,7 +111,6 @@ $.ajax('https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/' +
     }
 
     $('#mainDiv3').append(
-        // '<div class="card">' +
         '<div class="card-body text-center">' +
         '<h1 class="card-title">' +
         Math.floor(data.daily.data[2].temperatureHigh) +
@@ -129,12 +124,11 @@ $.ajax('https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/' +
         '</div>' +
         '<strong>Forecast: </strong>' + data.daily.data[2].summary +
         '<br>' +
-        '<strong>Humidity: </strong>' + (data.daily.data[2].humidity * 100) + '%' +
+        '<strong>Humidity: </strong>' + (data.daily.data[2].humidity * 100).toFixed() + '%' +
         '<br>' +
         '<strong>Wind: </strong>' + Math.floor(data.daily.data[2].windSpeed) + ' MPH' +
         '<br>' +
         '<strong>Pressure: </strong>' + data.daily.data[2].pressure.toFixed() +
-        // '</div>' +
         '</div>');
 
     if ((data.daily.data[2].icon) === "cloudy") {
@@ -190,3 +184,4 @@ var map = new mapboxgl.Map({
     zoom: 10.10,
     center: [-98.493482, 29.426026]
 });
+
