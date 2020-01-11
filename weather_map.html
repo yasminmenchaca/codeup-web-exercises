@@ -5,47 +5,20 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <!-- Mapbox CSS -->
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet'/>
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <style>
-        @import url('https://fonts.googleapis.com/css?family=Lato|Roboto&display=swap');
 
-        body {
-            background-color: #ACDBFD;
-            font-family: 'Lato', sans-serif;
-        }
-
-        .card-title{
-            font-family: 'Roboto', sans-serif;
-        }
-
-
-    </style>
-
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/weathermap.css">
 
     <title>Weather Map</title>
 
 </head>
 <body>
-
-<!--<div class="container">-->
-<!--    <div class="row">-->
-
-<!--        <div class="col-sm-4">-->
-<!--            <div id="mainDiv"></div>-->
-<!--        </div>-->
-
-<!--        <div class="col-sm-4">-->
-<!--            <div id="mainDiv2"></div>-->
-<!--        </div>-->
-
-<!--        <div class="col-sm-4">-->
-<!--            <div id="mainDiv3"></div>-->
-<!--        </div>-->
-
-<!--    </div>-->
-<!--</div>-->
 
 <div class="container">
     <h1>Weather Application</h1>
@@ -63,195 +36,50 @@
     </div>
 </div>
 
+<div class="container">
+    <form method="get" class="form">
+        <fieldset>
+            <legend>If searching by city the latitude and longitude input fields will autofill your coords.</legend>
+            <ul class="list-reset">
+                <li class="form-field">
+                    <label for="city-search">City Name</label>
+                    <input type="text" id="city-search" placeholder="e.g. Rochester, NY">
+                </li>
 
+                <li class="form-field">
+                    <label for="latitude">Latitude</label>
+                    <input type="text" id="latitude" placeholder="e.g. 42.9150747" required>
+                </li>
+
+                <li class="form-field">
+                    <label for="longitude">Longitude</label>
+                    <input type="text" id="longitude" placeholder="e.g. -77.784323" required>
+                </li>
+
+                <li class="form-field">
+                    <input type="checkbox" id="celsius">
+                    <label for="celsius">Report Celsius</label>
+                </li>
+            </ul>
+        </fieldset>
+
+        <button>Get Weather</button>
+    </form>
+</div>
+
+<!--ajax js-->
 <script src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
-<!--<script src="js/skycons.js"></script>-->
+<!-- Mapbox JS -->
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+<script src="js/keys.js"></script>
+<script src="js/mapbox-geocoder-utils.js"></script>
 
-<script src='js/keys.js'></script>
-
-<script>
-    (function () {
-        "use strict";
-
-        // // Pulling Weather
-        $.ajax('https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/' + darkSkyKey + '/29.4241,-98.4936').done(function (data) {
-
-            console.log(data);
-
-            $('#mainDiv').append(
-                // '<div class="card">' +
-                '<div class="card-body text-center">' +
-                '<h1 class="card-title">' +
-                Math.floor(data.daily.data[0].temperatureHigh) +
-                '&#176' +
-                '/' +
-                Math.floor(data.daily.data[0].temperatureLow) +
-                '&#176' +
-                '</h1>' +
-                // '<br>' +
-                '<div id="icon">' +
-                '</div>' +
-                '<strong>Forecast: </strong>' + data.currently.summary +
-                '<br>' +
-                '<strong>Humidity: </strong>' + (data.currently.humidity * 100) + '%' +
-                '<br>' +
-                '<strong>Wind: </strong>' + Math.floor(data.currently.windSpeed) + ' MPH' +
-                '<br>' +
-                '<strong>Pressure: </strong>' + data.currently.pressure.toFixed() +
-                // '</div>' +
-                '</div>');
-
-            if ((data.currently.icon) === "cloudy") {
-                $('#icon').html('<img src="icons/wi-cloudy.svg">')
-            }
-            if ((data.currently.icon) === "clear-day") {
-                $('#icon').html('<img src="icons/wi-day-sunny.svg">')
-            }
-            if ((data.currently.icon) === "clear-night") {
-                $('#icon').html('<img src="icons/wi-night-clear.svg">')
-            }
-            if ((data.currently.icon) === "rain") {
-                $('#icon').html('<img src="icons/wi-rain.svg">')
-            }
-            if ((data.currently.icon) === "snow") {
-                $('#icon').html('<img src="icons/wi-snow.svg">')
-            }
-            if ((data.currently.icon) === "sleet") {
-                $('#icon').html('<img src="icons/wi-sleet.svg">')
-            }
-            if ((data.currently.icon) === "wind") {
-                $('#icon').html('<img src="icons/wi-windy.svg">')
-            }
-            if ((data.currently.icon) === "fog") {
-                $('#icon').html('<img src="icons/wi-fog.svg">')
-            }
-            if ((data.currently.icon) === "partly-cloudy-day") {
-                $('#icon').html('<img src="icons/wi-day-sunny-overcast.svg">')
-            }
-            if ((data.currently.icon) === "partly-cloudy-night") {
-                $('#icon').html('<img src="icons/wi-night-partly-cloudy.svg">')
-            }
-
-            $('#mainDiv2').append(
-                // '<div class="card">' +
-                '<div class="card-body text-center">' +
-                '<h1 class="card-title">' +
-                Math.floor(data.daily.data[1].temperatureHigh) +
-                '&#176' +
-                '/' +
-                Math.floor(data.daily.data[1].temperatureLow) +
-                '&#176' +
-                '</h1>' +
-                // '<br>' +
-                '<div id="icon2">' +
-                '</div>' +
-                '<strong>Forecast: </strong>' + data.daily.data[1].summary +
-                '<br>' +
-                '<strong>Humidity: </strong>' + (data.daily.data[1].humidity * 100) + '%' +
-                '<br>' +
-                '<strong>Wind: </strong>' + Math.floor(data.daily.data[1].windSpeed) + ' MPH' +
-                '<br>' +
-                '<strong>Pressure: </strong>' + data.daily.data[1].pressure.toFixed() +
-                // '</div>' +
-                '</div>');
+<!--weathermap.js-->
+<script src="js/weathermap.js"></script>
 
 
-            if ((data.daily.data[1].icon) === "cloudy") {
-                $('#icon2').html('<img src="icons/wi-cloudy.svg">')
-            }
-            if ((data.daily.data[1].icon) === "clear-day") {
-                $('#icon2').html('<img src="icons/wi-day-sunny.svg">')
-            }
-            if ((data.daily.data[1].icon) === "clear-night") {
-                $('#icon2').html('<img src="icons/wi-night-clear.svg">')
-            }
-            if ((data.daily.data[1].icon) === "rain") {
-                $('#icon2').html('<img src="icons/wi-rain.svg">')
-            }
-            if ((data.daily.data[1].icon) === "snow") {
-                $('#icon2').html('<img src="icons/wi-snow.svg">')
-            }
-            if ((data.daily.data[1].icon) === "sleet") {
-                $('#icon2').html('<img src="icons/wi-sleet.svg">')
-            }
-            if ((data.daily.data[1].icon) === "wind") {
-                $('#icon2').html('<img src="icons/wi-windy.svg">')
-            }
-            if ((data.daily.data[1].icon) === "fog") {
-                $('#icon2').html('<img src="icons/wi-fog.svg">')
-            }
-            if ((data.daily.data[1].icon) === "partly-cloudy-day") {
-                $('#icon2').html('<img src="icons/wi-day-sunny-overcast.svg">')
-            }
-            if ((data.daily.data[1].icon) === "partly-cloudy-night") {
-                $('#icon2').html('<img src="icons/wi-night-partly-cloudy.svg">')
-            }
-
-            $('#mainDiv3').append(
-                // '<div class="card">' +
-                '<div class="card-body text-center">' +
-                '<h1 class="card-title">' +
-                Math.floor(data.daily.data[2].temperatureHigh) +
-                '&#176' +
-                '/' +
-                Math.floor(data.daily.data[2].temperatureLow) +
-                '&#176' +
-                '</h1>' +
-                // '<br>' +
-                '<div id="icon3">' +
-                '</div>' +
-                '<strong>Forecast: </strong>' + data.daily.data[2].summary +
-                '<br>' +
-                '<strong>Humidity: </strong>' + (data.daily.data[2].humidity * 100) + '%' +
-                '<br>' +
-                '<strong>Wind: </strong>' + Math.floor(data.daily.data[2].windSpeed) + ' MPH' +
-                '<br>' +
-                '<strong>Pressure: </strong>' + data.daily.data[2].pressure.toFixed() +
-                // '</div>' +
-                '</div>');
-
-            if ((data.daily.data[2].icon) === "cloudy") {
-                $('#icon3').html('<img src="icons/wi-cloudy.svg">')
-            }
-            if ((data.daily.data[2].icon) === "clear-day") {
-                $('#icon3').html('<img src="icons/wi-day-sunny.svg">')
-            }
-            if ((data.daily.data[2].icon) === "clear-night") {
-                $('#icon3').html('<img src="icons/wi-night-clear.svg">')
-            }
-            if ((data.daily.data[2].icon) === "rain") {
-                $('#icon3').html('<img src="icons/wi-rain.svg">')
-            }
-            if ((data.daily.data[2].icon) === "snow") {
-                $('#icon3').html('<img src="icons/wi-snow.svg">')
-            }
-            if ((data.daily.data[2].icon) === "sleet") {
-                $('#icon3').html('<img src="icons/wi-sleet.svg">')
-            }
-            if ((data.daily.data[2].icon) === "wind") {
-                $('#icon3').html('<img src="icons/wi-windy.svg">')
-            }
-            if ((data.daily.data[2].icon) === "fog") {
-                $('#icon3').html('<img src="icons/wi-fog.svg">')
-            }
-            if ((data.daily.data[2].icon) === "partly-cloudy-day") {
-                $('#icon3').html('<img src="icons/wi-day-sunny-overcast.svg">')
-            }
-            if ((data.daily.data[2].icon) === "partly-cloudy-night") {
-                $('#icon3').html('<img src="icons/wi-night-partly-cloudy.svg">')
-            }
-
-            // // // Converting Time
-            // var dateObject = new Date(data.currently.time * 1000);
-            // console.log(dateObject.toString());
-        });
-
-    })();
-
-</script>
-
-
+<!-- Popper.js & Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
         crossorigin="anonymous">
