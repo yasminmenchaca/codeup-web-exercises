@@ -16,7 +16,7 @@ $(document).ready(function () {
         map.addControl(nav, 'bottom-right');
 
 // disable map zoom when using scroll
-// map.scrollZoom.disable();
+        map.scrollZoom.disable();
 
         var marker = new mapboxgl.Marker({
             draggable: true
@@ -59,7 +59,7 @@ $(document).ready(function () {
                 var afterDay = weekday[dateDayAfter.getDay()];
                 console.log(afterDay);
 
-                $('#mainDiv').append(
+                $('#mainDiv').html(
                     '<div class="card-body text-center">' +
                     '<h1 class="card-title">' +
                     // Math.floor(data.daily.data[0].temperatureHigh) +
@@ -118,7 +118,7 @@ $(document).ready(function () {
                     $('#icon').html('<img src="icons/wi-night-partly-cloudy.svg">')
                 }
 
-                $('#todayDiv').append(
+                $('#todayDiv').html(
                     '<div class="card-body text-center">' +
                     '<h1 class="card-title">' +
                     '<strong> Today </strong>' +
@@ -174,7 +174,7 @@ $(document).ready(function () {
                 }
 
 
-                $('#mainDiv2').append(
+                $('#mainDiv2').html(
                     '<div class="card-body text-center">' +
                     '<h1 class="card-title">' +
                     '<strong>' + tomorrowDay + '</strong>' +
@@ -229,7 +229,7 @@ $(document).ready(function () {
                     $('#icon2').html('<img src="icons/wi-night-partly-cloudy.svg">')
                 }
 
-                $('#mainDiv3').append(
+                $('#mainDiv3').html(
                     '<div class="card-body text-center">' +
                     '<h1 class="card-title">' +
                     '<strong>' + afterDay + '</strong>' +
@@ -328,7 +328,7 @@ $(document).ready(function () {
                 var afterDay = weekday[dateDayAfter.getDay()];
                 console.log(afterDay);
 
-                $('#mainDiv').append(
+                $('#mainDiv').html(
                     '<div class="card-body text-center">' +
                     '<h1 class="card-title">' +
                     // Math.floor(data.daily.data[0].temperatureHigh) +
@@ -387,7 +387,7 @@ $(document).ready(function () {
                     $('#icon').html('<img src="icons/wi-night-partly-cloudy.svg">')
                 }
 
-                $('#todayDiv').append(
+                $('#todayDiv').html(
                     '<div class="card-body text-center">' +
                     '<h1 class="card-title">' +
                     '<strong> Today </strong>' +
@@ -443,7 +443,7 @@ $(document).ready(function () {
                 }
 
 
-                $('#mainDiv2').append(
+                $('#mainDiv2').html(
                     '<div class="card-body text-center">' +
                     '<h1 class="card-title">' +
                     '<strong>' + tomorrowDay + '</strong>' +
@@ -498,7 +498,7 @@ $(document).ready(function () {
                     $('#icon2').html('<img src="icons/wi-night-partly-cloudy.svg">')
                 }
 
-                $('#mainDiv3').append(
+                $('#mainDiv3').html(
                     '<div class="card-body text-center">' +
                     '<h1 class="card-title">' +
                     '<strong>' + afterDay + '</strong>' +
@@ -556,7 +556,6 @@ $(document).ready(function () {
             });
 
         }
-
         marker.on('dragend', onDragEnd);
     }
 );
