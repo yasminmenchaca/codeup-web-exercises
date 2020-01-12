@@ -13,7 +13,7 @@ $(document).ready(function () {
         });
 
         var nav = new mapboxgl.NavigationControl();
-        map.addControl(nav, 'bottom-right');
+        map.addControl(nav, 'top-right');
 
 // disable map zoom when using scroll
         map.scrollZoom.disable();
@@ -23,7 +23,6 @@ $(document).ready(function () {
         })
             .setLngLat([-98.491142, 29.424349])
             .addTo(map);
-
 
 /////////////////////////////////////////////////////////////////////// default marker  ///////////////////////////////////////////////////////////////////////
         var darkSkyInfo = "https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSkyKey + "/29.424349, -98.491142";
@@ -58,6 +57,7 @@ $(document).ready(function () {
                 var afterDay = weekday[dateDayAfter.getDay()];
                 // console.log(afterDay);
 
+
                 $('#mainDiv').html(
                     '<div class="card-body text-center">' +
                     '<h1 class="card-title">' +
@@ -66,7 +66,7 @@ $(document).ready(function () {
                     // '/' +
                     '<strong>Right Now</strong>' +
                     '<hr>' +
-                    '<strong> Current Temp: </strong>' + (data.currently.temperature).toFixed() +
+                    (data.currently.temperature).toFixed() +
                     '&#176F' +
                     // Math.floor(data.daily.data[0].temperatureLow) +
                     // '&#176' +
@@ -341,7 +341,7 @@ $(document).ready(function () {
                     // '/' +
                     '<strong>Right Now</strong>' +
                     '<hr>' +
-                    '<strong> Current Temp: </strong>' + (data.currently.temperature).toFixed() +
+                    (data.currently.temperature).toFixed() +
                     '&#176F' +
                     // Math.floor(data.daily.data[0].temperatureLow) +
                     // '&#176' +
