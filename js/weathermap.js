@@ -27,7 +27,7 @@ function onDragEnd() {
 // marker.on('dragend', onDragEnd);
 
 
-    var darkSkyInfo = 'https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/' + darkSkyKey + "/" + lngLat.lng + "," + lngLat.lat;
+    var darkSkyInfo = 'https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/' + darkSkyKey + "/" + lngLat.lat + "," + lngLat.lng;
 
 // // Pulling Weather
     $.get(darkSkyInfo).done(function (data) {
@@ -82,7 +82,7 @@ function onDragEnd() {
             '<br>' +
             '<strong> Conditions: </strong>' + data.currently.summary +
             '<br>' +
-            '<strong>Humidity: </strong>' + (data.currently.humidity * 100) + '%' +
+            '<strong>Humidity: </strong>' + (data.currently.humidity * 100).toFixed() + '%' +
             '<br>' +
             '<strong>Wind: </strong>' + Math.floor(data.currently.windSpeed) + ' MPH' +
             '<br>' +
@@ -136,7 +136,7 @@ function onDragEnd() {
             '</div>' +
             '<strong>Forecast: </strong>' + data.daily.data[0].summary +
             '<br>' +
-            '<strong>Humidity: </strong>' + (data.daily.data[0].humidity * 100) + '%' +
+            '<strong>Humidity: </strong>' + (data.daily.data[0].humidity * 100).toFixed() + '%' +
             '<br>' +
             '<strong>Wind: </strong>' + Math.floor(data.daily.data[0].windSpeed) + ' MPH' +
             '<br>' +
@@ -192,7 +192,7 @@ function onDragEnd() {
             '</div>' +
             '<strong>Forecast: </strong>' + data.daily.data[1].summary +
             '<br>' +
-            '<strong>Humidity: </strong>' + (data.daily.data[1].humidity * 100) + '%' +
+            '<strong>Humidity: </strong>' + (data.daily.data[1].humidity * 100).toFixed() + '%' +
             '<br>' +
             '<strong>Wind: </strong>' + Math.floor(data.daily.data[1].windSpeed) + ' MPH' +
             '<br>' +
@@ -247,7 +247,7 @@ function onDragEnd() {
             '</div>' +
             '<strong>Forecast: </strong>' + data.daily.data[2].summary +
             '<br>' +
-            '<strong>Humidity: </strong>' + (data.daily.data[2].humidity * 100) + '%' +
+            '<strong>Humidity: </strong>' + (data.daily.data[2].humidity * 100).toFixed() + '%' +
             '<br>' +
             '<strong>Wind: </strong>' + Math.floor(data.daily.data[2].windSpeed) + ' MPH' +
             '<br>' +
