@@ -28,14 +28,13 @@ $(document).ready(function () {
 /////////////////////////////////////////////////////////////////////// default marker  ///////////////////////////////////////////////////////////////////////
         var darkSkyInfo = "https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSkyKey + "/29.424349, -98.491142";
 
-
         function pullData() {
             $.get(darkSkyInfo).done(function (data) {
                 console.log(data);
 
                 // // Converting Time
                 var dateObject = new Date(data.daily.data[0].time * 1000);
-                console.log(dateObject.toString());
+                // console.log(dateObject.toString());
 
                 var dateTomorrow = new Date(data.daily.data[1].time * 1000);
 
@@ -51,13 +50,13 @@ $(document).ready(function () {
                 weekday[6] = "Saturday";
 
                 var todayDay = weekday[dateObject.getDay()];
-                console.log(todayDay);
+                // console.log(todayDay);
 
                 var tomorrowDay = weekday[dateTomorrow.getDay()];
-                console.log(tomorrowDay);
+                // console.log(tomorrowDay);
 
                 var afterDay = weekday[dateDayAfter.getDay()];
-                console.log(afterDay);
+                // console.log(afterDay);
 
                 $('#mainDiv').html(
                     '<div class="card-body text-center">' +
@@ -65,7 +64,7 @@ $(document).ready(function () {
                     // Math.floor(data.daily.data[0].temperatureHigh) +
                     // '&#176' +
                     // '/' +
-                    '<strong> Right Now </strong>' +
+                    '<strong>Right Now</strong>' +
                     '<hr>' +
                     '<strong> Current Temp: </strong>' + (data.currently.temperature).toFixed() +
                     '&#176F' +
@@ -123,9 +122,11 @@ $(document).ready(function () {
                     '<h1 class="card-title">' +
                     '<strong> Today </strong>' +
                     '<hr>' +
+                    'High: ' +
                     Math.floor(data.daily.data[0].temperatureHigh) +
                     '&#176' +
-                    '/' +
+                    '<br>' +
+                    'Low: ' +
                     Math.floor(data.daily.data[0].temperatureLow) +
                     '&#176' +
                     '</h1>' +
@@ -179,9 +180,11 @@ $(document).ready(function () {
                     '<h1 class="card-title">' +
                     '<strong>' + tomorrowDay + '</strong>' +
                     '<hr>' +
+                    'High: ' +
                     Math.floor(data.daily.data[1].temperatureHigh) +
                     '&#176' +
-                    '/' +
+                    '<br>' +
+                    'Low: ' +
                     Math.floor(data.daily.data[1].temperatureLow) +
                     '&#176' +
                     '</h1>' +
@@ -234,9 +237,11 @@ $(document).ready(function () {
                     '<h1 class="card-title">' +
                     '<strong>' + afterDay + '</strong>' +
                     '<hr>' +
+                    'High: ' +
                     Math.floor(data.daily.data[2].temperatureHigh) +
                     '&#176' +
-                    '/' +
+                    '<br>' +
+                    'Low: ' +
                     Math.floor(data.daily.data[2].temperatureLow) +
                     '&#176' +
                     '</h1>' +
@@ -304,7 +309,7 @@ $(document).ready(function () {
 
                 // // Converting Time
                 var dateObject = new Date(data.daily.data[0].time * 1000);
-                console.log(dateObject.toString());
+                // console.log(dateObject.toString());
 
                 var dateTomorrow = new Date(data.daily.data[1].time * 1000);
 
@@ -320,13 +325,13 @@ $(document).ready(function () {
                 weekday[6] = "Saturday";
 
                 var todayDay = weekday[dateObject.getDay()];
-                console.log(todayDay);
+                // console.log(todayDay);
 
                 var tomorrowDay = weekday[dateTomorrow.getDay()];
-                console.log(tomorrowDay);
+                // console.log(tomorrowDay);
 
                 var afterDay = weekday[dateDayAfter.getDay()];
-                console.log(afterDay);
+                // console.log(afterDay);
 
                 $('#mainDiv').html(
                     '<div class="card-body text-center">' +
@@ -334,7 +339,7 @@ $(document).ready(function () {
                     // Math.floor(data.daily.data[0].temperatureHigh) +
                     // '&#176' +
                     // '/' +
-                    '<strong> Right Now </strong>' +
+                    '<strong>Right Now</strong>' +
                     '<hr>' +
                     '<strong> Current Temp: </strong>' + (data.currently.temperature).toFixed() +
                     '&#176F' +
@@ -392,9 +397,11 @@ $(document).ready(function () {
                     '<h1 class="card-title">' +
                     '<strong> Today </strong>' +
                     '<hr>' +
+                    'High: ' +
                     Math.floor(data.daily.data[0].temperatureHigh) +
                     '&#176' +
-                    '/' +
+                    '<br>' +
+                    'Low: ' +
                     Math.floor(data.daily.data[0].temperatureLow) +
                     '&#176' +
                     '</h1>' +
@@ -448,9 +455,11 @@ $(document).ready(function () {
                     '<h1 class="card-title">' +
                     '<strong>' + tomorrowDay + '</strong>' +
                     '<hr>' +
+                    'High: ' +
                     Math.floor(data.daily.data[1].temperatureHigh) +
                     '&#176' +
-                    '/' +
+                    '<br>' +
+                    'Low: ' +
                     Math.floor(data.daily.data[1].temperatureLow) +
                     '&#176' +
                     '</h1>' +
@@ -503,9 +512,11 @@ $(document).ready(function () {
                     '<h1 class="card-title">' +
                     '<strong>' + afterDay + '</strong>' +
                     '<hr>' +
+                    'High: ' +
                     Math.floor(data.daily.data[2].temperatureHigh) +
                     '&#176' +
-                    '/' +
+                    '<br>' +
+                    'Low: ' +
                     Math.floor(data.daily.data[2].temperatureLow) +
                     '&#176' +
                     '</h1>' +
@@ -556,6 +567,7 @@ $(document).ready(function () {
             });
 
         }
+
         marker.on('dragend', onDragEnd);
     }
 );
