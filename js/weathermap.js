@@ -5,6 +5,7 @@ $(document).ready(function () {
         mapboxgl.accessToken = mapboxToken;
 
         var coordinates = document.getElementById('coordinates');
+
         var map = new mapboxgl.Map({
             container: 'map',
             style: 'mapbox://styles/mapbox/streets-v11',
@@ -14,6 +15,9 @@ $(document).ready(function () {
 
         var geocoder = new MapboxGeocoder({
             accessToken: mapboxgl.accessToken,
+            marker: {
+                draggable: true
+            },
             mapboxgl: mapboxgl
         });
 
@@ -31,6 +35,7 @@ $(document).ready(function () {
             .addTo(map);
 
 /////////////////////////////////////////////////////////////////////// default marker  ///////////////////////////////////////////////////////////////////////
+
         var darkSkyInfo = "https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSkyKey + "/29.424349, -98.491142";
 
         function pullData() {
