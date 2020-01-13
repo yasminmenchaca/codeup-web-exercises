@@ -65,7 +65,6 @@ $(document).ready(function () {
                 var afterDay = weekday[dateDayAfter.getDay()];
                 // console.log(afterDay);
 
-
                 $('#mainDiv').html(
                     '<div class="card-body text-center">' +
                     '<h1 class="card-title">' +
@@ -96,33 +95,26 @@ $(document).ready(function () {
 
                 if ((data.currently.icon) === "cloudy") {
                     $('#icon').html('<img src="icons/wi-cloudy.svg">')
-                }
-                if ((data.currently.icon) === "clear-day") {
+                } else if ((data.currently.icon) === "clear-day") {
                     $('#icon').html('<img src="icons/wi-day-sunny.svg">')
-                }
-                if ((data.currently.icon) === "clear-night") {
+                } else if ((data.currently.icon) === "clear-night") {
                     $('#icon').html('<img src="icons/wi-night-clear.svg">')
-                }
-                if ((data.currently.icon) === "rain") {
+                } else if ((data.currently.icon) === "rain") {
                     $('#icon').html('<img src="icons/wi-rain.svg">')
-                }
-                if ((data.currently.icon) === "snow") {
+                } else if ((data.currently.icon) === "snow") {
                     $('#icon').html('<img src="icons/wi-snow.svg">')
-                }
-                if ((data.currently.icon) === "sleet") {
+                } else if ((data.currently.icon) === "sleet") {
                     $('#icon').html('<img src="icons/wi-sleet.svg">')
-                }
-                if ((data.currently.icon) === "wind") {
+                } else if ((data.currently.icon) === "wind") {
                     $('#icon').html('<img src="icons/wi-windy.svg">')
-                }
-                if ((data.currently.icon) === "fog") {
+                } else if ((data.currently.icon) === "fog") {
                     $('#icon').html('<img src="icons/wi-fog.svg">')
-                }
-                if ((data.currently.icon) === "partly-cloudy-day") {
+                } else if ((data.currently.icon) === "partly-cloudy-day") {
                     $('#icon').html('<img src="icons/wi-day-sunny-overcast.svg">')
-                }
-                if ((data.currently.icon) === "partly-cloudy-night") {
+                } else if ((data.currently.icon) === "partly-cloudy-night") {
                     $('#icon').html('<img src="icons/wi-night-partly-cloudy.svg">')
+                } else {
+                    console.log("Icon not available");
                 }
 
                 $('#todayDiv').html(
@@ -132,14 +124,14 @@ $(document).ready(function () {
                     '<hr>' +
                     'High: ' +
                     Math.floor(data.daily.data[0].temperatureHigh) +
-                    '&#176' +
+                    '&#176F' +
                     '<br>' +
                     'Low: ' +
                     Math.floor(data.daily.data[0].temperatureLow) +
-                    '&#176' +
+                    '&#176F' +
                     '</h1>' +
                     // '<br>' +
-                    '<div id="todayIcon">' +
+                    '<div id="currentIcon">' +
                     '</div>' +
                     '<strong>Forecast: </strong>' + data.daily.data[0].summary +
                     '<br>' +
@@ -152,36 +144,28 @@ $(document).ready(function () {
 
 
                 if ((data.daily.data[0].icon) === "cloudy") {
-                    $('#todayIcon').html('<img src="icons/wi-cloudy.svg">')
+                    $('#currentIcon').html('<img src="icons/wi-cloudy.svg">')
+                } else if ((data.daily.data[0].icon) === "clear-day") {
+                    $('#currentIcon').html('<img src="icons/wi-day-sunny.svg">')
+                } else if ((data.daily.data[0].icon) === "clear-night") {
+                    $('#currentIcon').html('<img src="icons/wi-night-clear.svg">')
+                } else if ((data.daily.data[0].icon) === "rain") {
+                    $('#currentIcon').html('<img src="icons/wi-rain.svg">')
+                } else if ((data.daily.data[0].icon) === "snow") {
+                    $('#currentIcon').html('<img src="icons/wi-snow.svg">')
+                } else if ((data.daily.data[0].icon) === "sleet") {
+                    $('#currentIcon').html('<img src="icons/wi-sleet.svg">')
+                } else if ((data.daily.data[0].icon) === "wind") {
+                    $('#currentIcon').html('<img src="icons/wi-windy.svg">')
+                } else if ((data.daily.data[0].icon) === "fog") {
+                    $('#currentIcon').html('<img src="icons/wi-fog.svg">')
+                } else if ((data.daily.data[0].icon) === "partly-cloudy-day") {
+                    $('#currentIcon').html('<img src="icons/wi-day-sunny-overcast.svg">')
+                } else if ((data.daily.data[0].icon) === "partly-cloudy-night") {
+                    $('#currentIcon').html('<img src="icons/wi-night-partly-cloudy.svg">')
+                } else {
+                    console.log("Icon not available");
                 }
-                if ((data.daily.data[0].icon) === "clear-day") {
-                    $('#todayIcon').html('<img src="icons/wi-day-sunny.svg">')
-                }
-                if ((data.daily.data[0].icon) === "clear-night") {
-                    $('#todayIcon').html('<img src="icons/wi-night-clear.svg">')
-                }
-                if ((data.daily.data[0].icon) === "rain") {
-                    $('#todayIcon').html('<img src="icons/wi-rain.svg">')
-                }
-                if ((data.daily.data[0].icon) === "snow") {
-                    $('#todayIcon').html('<img src="icons/wi-snow.svg">')
-                }
-                if ((data.daily.data[0].icon) === "sleet") {
-                    $('#todayIcon').html('<img src="icons/wi-sleet.svg">')
-                }
-                if ((data.daily.data[0].icon) === "wind") {
-                    $('#todayIcon').html('<img src="icons/wi-windy.svg">')
-                }
-                if ((data.daily.data[0].icon) === "fog") {
-                    $('#todayIcon').html('<img src="icons/wi-fog.svg">')
-                }
-                if ((data.daily.data[0].icon) === "partly-cloudy-day") {
-                    $('#todayIcon').html('<img src="icons/wi-day-sunny-overcast.svg">')
-                }
-                if ((data.daily.data[0].icon) === "partly-cloudy-night") {
-                    $('#todayIcon').html('<img src="icons/wi-night-partly-cloudy.svg">')
-                }
-
 
                 $('#mainDiv2').html(
                     '<div class="card-body text-center">' +
@@ -190,11 +174,11 @@ $(document).ready(function () {
                     '<hr>' +
                     'High: ' +
                     Math.floor(data.daily.data[1].temperatureHigh) +
-                    '&#176' +
+                    '&#176F' +
                     '<br>' +
                     'Low: ' +
                     Math.floor(data.daily.data[1].temperatureLow) +
-                    '&#176' +
+                    '&#176F' +
                     '</h1>' +
                     // '<br>' +
                     '<div id="icon2">' +
@@ -208,36 +192,28 @@ $(document).ready(function () {
                     '<strong>Pressure: </strong>' + data.daily.data[1].pressure.toFixed() +
                     '</div>');
 
-
                 if ((data.daily.data[1].icon) === "cloudy") {
                     $('#icon2').html('<img src="icons/wi-cloudy.svg">')
-                }
-                if ((data.daily.data[1].icon) === "clear-day") {
+                } else if ((data.daily.data[1].icon) === "clear-day") {
                     $('#icon2').html('<img src="icons/wi-day-sunny.svg">')
-                }
-                if ((data.daily.data[1].icon) === "clear-night") {
+                } else if ((data.daily.data[1].icon) === "clear-night") {
                     $('#icon2').html('<img src="icons/wi-night-clear.svg">')
-                }
-                if ((data.daily.data[1].icon) === "rain") {
+                } else if ((data.daily.data[1].icon) === "rain") {
                     $('#icon2').html('<img src="icons/wi-rain.svg">')
-                }
-                if ((data.daily.data[1].icon) === "snow") {
+                } else if ((data.daily.data[1].icon) === "snow") {
                     $('#icon2').html('<img src="icons/wi-snow.svg">')
-                }
-                if ((data.daily.data[1].icon) === "sleet") {
+                } else if ((data.daily.data[1].icon) === "sleet") {
                     $('#icon2').html('<img src="icons/wi-sleet.svg">')
-                }
-                if ((data.daily.data[1].icon) === "wind") {
+                } else if ((data.daily.data[1].icon) === "wind") {
                     $('#icon2').html('<img src="icons/wi-windy.svg">')
-                }
-                if ((data.daily.data[1].icon) === "fog") {
+                } else if ((data.daily.data[1].icon) === "fog") {
                     $('#icon2').html('<img src="icons/wi-fog.svg">')
-                }
-                if ((data.daily.data[1].icon) === "partly-cloudy-day") {
+                } else if ((data.daily.data[1].icon) === "partly-cloudy-day") {
                     $('#icon2').html('<img src="icons/wi-day-sunny-overcast.svg">')
-                }
-                if ((data.daily.data[1].icon) === "partly-cloudy-night") {
+                } else if ((data.daily.data[1].icon) === "partly-cloudy-night") {
                     $('#icon2').html('<img src="icons/wi-night-partly-cloudy.svg">')
+                } else {
+                    console.log("Icon not available");
                 }
 
                 $('#mainDiv3').html(
@@ -247,11 +223,11 @@ $(document).ready(function () {
                     '<hr>' +
                     'High: ' +
                     Math.floor(data.daily.data[2].temperatureHigh) +
-                    '&#176' +
+                    '&#176F' +
                     '<br>' +
                     'Low: ' +
                     Math.floor(data.daily.data[2].temperatureLow) +
-                    '&#176' +
+                    '&#176F' +
                     '</h1>' +
                     // '<br>' +
                     '<div id="icon3">' +
@@ -267,34 +243,28 @@ $(document).ready(function () {
 
                 if ((data.daily.data[2].icon) === "cloudy") {
                     $('#icon3').html('<img src="icons/wi-cloudy.svg">')
-                }
-                if ((data.daily.data[2].icon) === "clear-day") {
+                } else if ((data.daily.data[2].icon) === "clear-day") {
                     $('#icon3').html('<img src="icons/wi-day-sunny.svg">')
-                }
-                if ((data.daily.data[2].icon) === "clear-night") {
+                } else if ((data.daily.data[2].icon) === "clear-night") {
                     $('#icon3').html('<img src="icons/wi-night-clear.svg">')
-                }
-                if ((data.daily.data[2].icon) === "rain") {
+                } else if ((data.daily.data[2].icon) === "rain") {
                     $('#icon3').html('<img src="icons/wi-rain.svg">')
-                }
-                if ((data.daily.data[2].icon) === "snow") {
+                } else if ((data.daily.data[2].icon) === "snow") {
                     $('#icon3').html('<img src="icons/wi-snow.svg">')
-                }
-                if ((data.daily.data[2].icon) === "sleet") {
+                } else if ((data.daily.data[2].icon) === "sleet") {
                     $('#icon3').html('<img src="icons/wi-sleet.svg">')
-                }
-                if ((data.daily.data[2].icon) === "wind") {
+                } else if ((data.daily.data[2].icon) === "wind") {
                     $('#icon3').html('<img src="icons/wi-windy.svg">')
-                }
-                if ((data.daily.data[2].icon) === "fog") {
+                } else if ((data.daily.data[2].icon) === "fog") {
                     $('#icon3').html('<img src="icons/wi-fog.svg">')
-                }
-                if ((data.daily.data[2].icon) === "partly-cloudy-day") {
+                } else if ((data.daily.data[2].icon) === "partly-cloudy-day") {
                     $('#icon3').html('<img src="icons/wi-day-sunny-overcast.svg">')
-                }
-                if ((data.daily.data[2].icon) === "partly-cloudy-night") {
+                } else if ((data.daily.data[2].icon) === "partly-cloudy-night") {
                     $('#icon3').html('<img src="icons/wi-night-partly-cloudy.svg">')
+                } else {
+                    console.log("Icon not available");
                 }
+
             })
         }
 
@@ -371,33 +341,26 @@ $(document).ready(function () {
 
                 if ((data.currently.icon) === "cloudy") {
                     $('#icon').html('<img src="icons/wi-cloudy.svg">')
-                }
-                if ((data.currently.icon) === "clear-day") {
+                } else if ((data.currently.icon) === "clear-day") {
                     $('#icon').html('<img src="icons/wi-day-sunny.svg">')
-                }
-                if ((data.currently.icon) === "clear-night") {
+                } else if ((data.currently.icon) === "clear-night") {
                     $('#icon').html('<img src="icons/wi-night-clear.svg">')
-                }
-                if ((data.currently.icon) === "rain") {
+                } else if ((data.currently.icon) === "rain") {
                     $('#icon').html('<img src="icons/wi-rain.svg">')
-                }
-                if ((data.currently.icon) === "snow") {
+                } else if ((data.currently.icon) === "snow") {
                     $('#icon').html('<img src="icons/wi-snow.svg">')
-                }
-                if ((data.currently.icon) === "sleet") {
+                } else if ((data.currently.icon) === "sleet") {
                     $('#icon').html('<img src="icons/wi-sleet.svg">')
-                }
-                if ((data.currently.icon) === "wind") {
+                } else if ((data.currently.icon) === "wind") {
                     $('#icon').html('<img src="icons/wi-windy.svg">')
-                }
-                if ((data.currently.icon) === "fog") {
+                } else if ((data.currently.icon) === "fog") {
                     $('#icon').html('<img src="icons/wi-fog.svg">')
-                }
-                if ((data.currently.icon) === "partly-cloudy-day") {
+                } else if ((data.currently.icon) === "partly-cloudy-day") {
                     $('#icon').html('<img src="icons/wi-day-sunny-overcast.svg">')
-                }
-                if ((data.currently.icon) === "partly-cloudy-night") {
+                } else if ((data.currently.icon) === "partly-cloudy-night") {
                     $('#icon').html('<img src="icons/wi-night-partly-cloudy.svg">')
+                } else {
+                    console.log("Icon not available");
                 }
 
                 $('#todayDiv').html(
@@ -407,14 +370,14 @@ $(document).ready(function () {
                     '<hr>' +
                     'High: ' +
                     Math.floor(data.daily.data[0].temperatureHigh) +
-                    '&#176' +
+                    '&#176F' +
                     '<br>' +
                     'Low: ' +
                     Math.floor(data.daily.data[0].temperatureLow) +
-                    '&#176' +
+                    '&#176F' +
                     '</h1>' +
                     // '<br>' +
-                    '<div id="todayIcon">' +
+                    '<div id="currentIcon">' +
                     '</div>' +
                     '<strong>Forecast: </strong>' + data.daily.data[0].summary +
                     '<br>' +
@@ -427,34 +390,27 @@ $(document).ready(function () {
 
 
                 if ((data.daily.data[0].icon) === "cloudy") {
-                    $('#todayIcon').html('<img src="icons/wi-cloudy.svg">')
-                }
-                if ((data.daily.data[0].icon) === "clear-day") {
-                    $('#todayIcon').html('<img src="icons/wi-day-sunny.svg">')
-                }
-                if ((data.daily.data[0].icon) === "clear-night") {
-                    $('#todayIcon').html('<img src="icons/wi-night-clear.svg">')
-                }
-                if ((data.daily.data[0].icon) === "rain") {
-                    $('#todayIcon').html('<img src="icons/wi-rain.svg">')
-                }
-                if ((data.daily.data[0].icon) === "snow") {
-                    $('#todayIcon').html('<img src="icons/wi-snow.svg">')
-                }
-                if ((data.daily.data[0].icon) === "sleet") {
-                    $('#todayIcon').html('<img src="icons/wi-sleet.svg">')
-                }
-                if ((data.daily.data[0].icon) === "wind") {
-                    $('#todayIcon').html('<img src="icons/wi-windy.svg">')
-                }
-                if ((data.daily.data[0].icon) === "fog") {
-                    $('#todayIcon').html('<img src="icons/wi-fog.svg">')
-                }
-                if ((data.daily.data[0].icon) === "partly-cloudy-day") {
-                    $('#todayIcon').html('<img src="icons/wi-day-sunny-overcast.svg">')
-                }
-                if ((data.daily.data[0].icon) === "partly-cloudy-night") {
-                    $('#todayIcon').html('<img src="icons/wi-night-partly-cloudy.svg">')
+                    $('#currentIcon').html('<img src="icons/wi-cloudy.svg">')
+                } else if ((data.daily.data[0].icon) === "clear-day") {
+                    $('#currentIcon').html('<img src="icons/wi-day-sunny.svg">')
+                } else if ((data.daily.data[0].icon) === "clear-night") {
+                    $('#currentIcon').html('<img src="icons/wi-night-clear.svg">')
+                } else if ((data.daily.data[0].icon) === "rain") {
+                    $('#currentIcon').html('<img src="icons/wi-rain.svg">')
+                } else if ((data.daily.data[0].icon) === "snow") {
+                    $('#currentIcon').html('<img src="icons/wi-snow.svg">')
+                } else if ((data.daily.data[0].icon) === "sleet") {
+                    $('#currentIcon').html('<img src="icons/wi-sleet.svg">')
+                } else if ((data.daily.data[0].icon) === "wind") {
+                    $('#currentIcon').html('<img src="icons/wi-windy.svg">')
+                } else if ((data.daily.data[0].icon) === "fog") {
+                    $('#currentIcon').html('<img src="icons/wi-fog.svg">')
+                } else if ((data.daily.data[0].icon) === "partly-cloudy-day") {
+                    $('#currentIcon').html('<img src="icons/wi-day-sunny-overcast.svg">')
+                } else if ((data.daily.data[0].icon) === "partly-cloudy-night") {
+                    $('#currentIcon').html('<img src="icons/wi-night-partly-cloudy.svg">')
+                } else {
+                    console.log("Icon not available");
                 }
 
 
@@ -465,11 +421,11 @@ $(document).ready(function () {
                     '<hr>' +
                     'High: ' +
                     Math.floor(data.daily.data[1].temperatureHigh) +
-                    '&#176' +
+                    '&#176F' +
                     '<br>' +
                     'Low: ' +
                     Math.floor(data.daily.data[1].temperatureLow) +
-                    '&#176' +
+                    '&#176F' +
                     '</h1>' +
                     // '<br>' +
                     '<div id="icon2">' +
@@ -483,36 +439,28 @@ $(document).ready(function () {
                     '<strong>Pressure: </strong>' + data.daily.data[1].pressure.toFixed() +
                     '</div>');
 
-
                 if ((data.daily.data[1].icon) === "cloudy") {
                     $('#icon2').html('<img src="icons/wi-cloudy.svg">')
-                }
-                if ((data.daily.data[1].icon) === "clear-day") {
+                } else if ((data.daily.data[1].icon) === "clear-day") {
                     $('#icon2').html('<img src="icons/wi-day-sunny.svg">')
-                }
-                if ((data.daily.data[1].icon) === "clear-night") {
+                } else if ((data.daily.data[1].icon) === "clear-night") {
                     $('#icon2').html('<img src="icons/wi-night-clear.svg">')
-                }
-                if ((data.daily.data[1].icon) === "rain") {
+                } else if ((data.daily.data[1].icon) === "rain") {
                     $('#icon2').html('<img src="icons/wi-rain.svg">')
-                }
-                if ((data.daily.data[1].icon) === "snow") {
+                } else if ((data.daily.data[1].icon) === "snow") {
                     $('#icon2').html('<img src="icons/wi-snow.svg">')
-                }
-                if ((data.daily.data[1].icon) === "sleet") {
+                } else if ((data.daily.data[1].icon) === "sleet") {
                     $('#icon2').html('<img src="icons/wi-sleet.svg">')
-                }
-                if ((data.daily.data[1].icon) === "wind") {
+                } else if ((data.daily.data[1].icon) === "wind") {
                     $('#icon2').html('<img src="icons/wi-windy.svg">')
-                }
-                if ((data.daily.data[1].icon) === "fog") {
+                } else if ((data.daily.data[1].icon) === "fog") {
                     $('#icon2').html('<img src="icons/wi-fog.svg">')
-                }
-                if ((data.daily.data[1].icon) === "partly-cloudy-day") {
+                } else if ((data.daily.data[1].icon) === "partly-cloudy-day") {
                     $('#icon2').html('<img src="icons/wi-day-sunny-overcast.svg">')
-                }
-                if ((data.daily.data[1].icon) === "partly-cloudy-night") {
+                } else if ((data.daily.data[1].icon) === "partly-cloudy-night") {
                     $('#icon2').html('<img src="icons/wi-night-partly-cloudy.svg">')
+                } else {
+                    console.log("Icon not available");
                 }
 
                 $('#mainDiv3').html(
@@ -522,11 +470,11 @@ $(document).ready(function () {
                     '<hr>' +
                     'High: ' +
                     Math.floor(data.daily.data[2].temperatureHigh) +
-                    '&#176' +
+                    '&#176F' +
                     '<br>' +
                     'Low: ' +
                     Math.floor(data.daily.data[2].temperatureLow) +
-                    '&#176' +
+                    '&#176F' +
                     '</h1>' +
                     // '<br>' +
                     '<div id="icon3">' +
@@ -542,36 +490,27 @@ $(document).ready(function () {
 
                 if ((data.daily.data[2].icon) === "cloudy") {
                     $('#icon3').html('<img src="icons/wi-cloudy.svg">')
-                }
-                if ((data.daily.data[2].icon) === "clear-day") {
+                } else if ((data.daily.data[2].icon) === "clear-day") {
                     $('#icon3').html('<img src="icons/wi-day-sunny.svg">')
-                }
-                if ((data.daily.data[2].icon) === "clear-night") {
+                } else if ((data.daily.data[2].icon) === "clear-night") {
                     $('#icon3').html('<img src="icons/wi-night-clear.svg">')
-                }
-                if ((data.daily.data[2].icon) === "rain") {
+                } else if ((data.daily.data[2].icon) === "rain") {
                     $('#icon3').html('<img src="icons/wi-rain.svg">')
-                }
-                if ((data.daily.data[2].icon) === "snow") {
+                } else if ((data.daily.data[2].icon) === "snow") {
                     $('#icon3').html('<img src="icons/wi-snow.svg">')
-                }
-                if ((data.daily.data[2].icon) === "sleet") {
+                } else if ((data.daily.data[2].icon) === "sleet") {
                     $('#icon3').html('<img src="icons/wi-sleet.svg">')
-                }
-                if ((data.daily.data[2].icon) === "wind") {
+                } else if ((data.daily.data[2].icon) === "wind") {
                     $('#icon3').html('<img src="icons/wi-windy.svg">')
-                }
-                if ((data.daily.data[2].icon) === "fog") {
+                } else if ((data.daily.data[2].icon) === "fog") {
                     $('#icon3').html('<img src="icons/wi-fog.svg">')
-                }
-                if ((data.daily.data[2].icon) === "partly-cloudy-day") {
+                } else if ((data.daily.data[2].icon) === "partly-cloudy-day") {
                     $('#icon3').html('<img src="icons/wi-day-sunny-overcast.svg">')
-                }
-                if ((data.daily.data[2].icon) === "partly-cloudy-night") {
+                } else if ((data.daily.data[2].icon) === "partly-cloudy-night") {
                     $('#icon3').html('<img src="icons/wi-night-partly-cloudy.svg">')
+                } else {
+                    console.log("Icon not available");
                 }
-
-
             });
 
         }
