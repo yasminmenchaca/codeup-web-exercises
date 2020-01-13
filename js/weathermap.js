@@ -12,18 +12,16 @@ $(document).ready(function () {
             zoom: 10
         });
 
-        // var geocoder = new MapboxGeocoder({
-        //     accessToken: mapboxgl.accessToken,
-        //     mapboxgl: mapboxgl
-        // });
-        //
-        // document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
+        var geocoder = new MapboxGeocoder({
+            accessToken: mapboxgl.accessToken,
+            mapboxgl: mapboxgl
+        });
 
+        document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
 
         var nav = new mapboxgl.NavigationControl();
         map.addControl(nav, 'top-right');
 
-// disable map zoom when using scroll
         map.scrollZoom.disable();
 
         var marker = new mapboxgl.Marker({
@@ -37,7 +35,7 @@ $(document).ready(function () {
 
         function pullData() {
             $.get(darkSkyInfo).done(function (data) {
-                console.log(data);
+                // console.log(data);
 
                 // // Converting Time
                 var dateObject = new Date(data.daily.data[0].time * 1000);
@@ -283,7 +281,7 @@ $(document).ready(function () {
 // // Pulling Weather
             $.get(darkSkyInfo).done(function (data) {
 
-                console.log(data);
+                // console.log(data);
 
                 // // Converting Time
                 var dateObject = new Date(data.daily.data[0].time * 1000);
