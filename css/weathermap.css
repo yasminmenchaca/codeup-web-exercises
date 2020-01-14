@@ -19,22 +19,25 @@ body {
     visibility: hidden;
 }
 
-.cards-cont{
+.cards-cont {
     /*background-color: orange;*/
-}
+    margin-top: 1em;
 
-.map-cont{
-    /*background-color: red;*/
 }
 
 .geocoder {
-position: absolute;
-z-index: 1;
-width: 50%;
-left: 50%;
-margin-left: -25%;
-top: 20px;
+    /*position: absolute;*/
+    /*z-index: 1;*/
+    /*width: 50%;*/
+    /*left: 50%;*/
+    /*margin-left: -25%;*/
+    /*top: 20px;*/
 }
+
 .mapboxgl-ctrl-geocoder {
-min-width: 100%;
+    width: 100%;
+}
+
+.card-body {
+
 }
