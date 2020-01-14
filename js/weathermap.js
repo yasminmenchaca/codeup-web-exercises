@@ -2,9 +2,10 @@ $(document).ready(function () {
     "use strict";
 
 // // mapbox
+
     mapboxgl.accessToken = mapboxToken;
 
-    var coordinates = document.getElementById('coordinates');
+    // var coordinates = document.getElementById('coordinates');
 
     var map = new mapboxgl.Map({
         container: 'map',
@@ -20,9 +21,6 @@ $(document).ready(function () {
         },
         mapboxgl: mapboxgl
     });
-
-    // map.addControl(geocoder);
-
     document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
 
     var nav = new mapboxgl.NavigationControl();
@@ -35,9 +33,6 @@ $(document).ready(function () {
     })
         .setLngLat([-98.491142, 29.424349])
         .addTo(map);
-
-    // console.log(geocoder)
-
 
 /////////////////////////////////////////////////////////////////////// default marker  ///////////////////////////////////////////////////////////////////////
     var darkSkyInfo = "https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSkyKey + "/29.424349, -98.491142";
@@ -281,8 +276,8 @@ $(document).ready(function () {
 /////////////////////////////////////////////////////////////////////// draggable marker  ///////////////////////////////////////////////////////////////////////
     function onDragEnd() {
         var lngLat = marker.getLngLat();
-        coordinates.style.display = 'block';
-        coordinates.innerHTML = 'Longitude: ' + lngLat.lng + '<br />Latitude: ' + lngLat.lat;
+        // coordinates.style.display = 'block';
+        // coordinates.innerHTML = 'Longitude: ' + lngLat.lng + '<br />Latitude: ' + lngLat.lat;
 
         var darkSkyInfo = 'https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/' + darkSkyKey + "/" + lngLat.lat + "," + lngLat.lng;
 
@@ -761,8 +756,7 @@ $(document).ready(function () {
             }
 
         });
-    }
-
+   }
     geocoder.on('result', function (e) {
         var inputLat = e.result.geometry.coordinates[1];
         var inputLon = e.result.geometry.coordinates[0];
