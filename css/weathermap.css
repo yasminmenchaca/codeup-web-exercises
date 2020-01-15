@@ -31,9 +31,13 @@ body {
 }
 
 #header{
-    color: white;
+    color: #EFE8D7;
 }
 
 #location-id {
-    color: white;
+    color: #EFE8D7;
+}
+
+.card-body, .card{
+    background-color: #EFE8D7;
 }
