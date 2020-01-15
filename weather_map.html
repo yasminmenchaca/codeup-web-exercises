@@ -21,13 +21,16 @@
 
 <nav class="navbar sticky-top navbar-light bg-light">
     <h1>Weather Application</h1>
-    <form class="form-inline">
-        <input id="userInput" class="form-control" type="text" placeholder="Search by City, State, or ZIP code">
-        <button id="submit" type="button" class="btn btn-primary">Submit</button>
+    <form class="form-inline my-2 my-lg-0">
+        <input id="userInput" class="form-control mr-sm-2" type="text" placeholder="Search by City, State, or ZIP code">
+        <button id="submit" class="btn btn-primary my-2 my-sm-0" type="button">Search</button>
     </form>
 </nav>
 
 <div class="container cards-cont">
+
+    <h1 class="text-center">Location: <span class="span-location"> San Antonio, Texas, United States</span></h1>
+
     <div class="card-deck">
         <div class="card">
             <div id="mainDiv"></div>
@@ -69,9 +72,10 @@
 
 <script src="js/mapbox-geocoder-utils.js"></script>
 
+<script src="js/skycons.js"></script>
+
 <!--weathermap.js-->
 <script src="js/weathermap.js"></script>
-
 
 
 </body>

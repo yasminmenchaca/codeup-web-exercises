@@ -502,9 +502,12 @@ $(document).ready(function () {
                 console.log("Icon not available");
             }
         });
-
+        var mapCity = reverseGeocodeMarker(lngLat, mapboxToken);
+        mapCity.then(function (result) {
+            $('.span-location').html(result)
+            console.log(result)
+        });
     }
-
     marker.on('dragend', onDragEnd);
 
 /////////////////////////////////////////////////////////////////////// search bar ///////////////////////////////////////////////////////////////////////
@@ -513,8 +516,12 @@ $(document).ready(function () {
         var location = $(userInput).val();
 
         geocode(location, mapboxToken).then(function (result) {
-            var latitude = result[1];
-            var longitude = result[0];
+            var latitude = result[1].toString();
+            var longitude = result[0].toString();
+
+
+            var coordinates = {lat: latitude, lng: longitude};
+            // console.log([coordinates]);
 
             $.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSkyKey + "/" + latitude + ", " + longitude).done(function (data) {
 
@@ -746,12 +753,14 @@ $(document).ready(function () {
                 } else {
                     console.log("Icon not available");
                 }
-
             });
             map.flyTo({center: result, zoom: 10});
-            $('#city').html(location.charAt(0).toUpperCase() + location.slice(1, location.length));
-            marker.setLngLat([longitude, latitude])
+            marker.setLngLat([longitude, latitude]);
+            var mapCity = reverseGeocode(coordinates, mapboxToken);
+            mapCity.then(function (result) {
+                $('.span-location').html(result);
+                console.log(result)
+            });
         });
     });
-
 })
