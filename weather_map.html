@@ -14,17 +14,20 @@
 
     <link rel="stylesheet" href="css/weathermap.css">
 
-    <title>Weather Map</title>
+    <title>Weather Application</title>
 
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar sticky-top navbar-light bg-light">
     <h1>Weather Application</h1>
+    <form class="form-inline">
+        <input id="userInput" class="form-control" type="text" placeholder="Search by City, State, or ZIP code">
+        <button id="submit" type="button" class="btn btn-primary">Submit</button>
+    </form>
 </nav>
 
 <div class="container cards-cont">
-    <div id="geocoder" class="geocoder"></div>
     <div class="card-deck">
         <div class="card">
             <div id="mainDiv"></div>
@@ -64,8 +67,12 @@
 
 <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.2/mapbox-gl-geocoder.min.js"></script>
 
+<script src="js/mapbox-geocoder-utils.js"></script>
+
 <!--weathermap.js-->
 <script src="js/weathermap.js"></script>
+
+
 
 </body>
 </html>
