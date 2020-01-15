@@ -505,7 +505,7 @@ $(document).ready(function () {
         var mapCity = reverseGeocodeMarker(lngLat, mapboxToken);
         mapCity.then(function (result) {
             $('.span-location').html(result)
-            console.log(result)
+            // console.log(result)
         });
     }
     marker.on('dragend', onDragEnd);
