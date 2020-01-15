@@ -19,17 +19,17 @@
 </head>
 <body>
 
-<nav class="navbar sticky-top navbar-light bg-light">
-    <h1>Weather Application</h1>
+<nav class="navbar sticky-top navbar-light" style="background-color: #3E000C;">
+    <h1 id="header">Weather Application</h1>
     <form class="form-inline my-2 my-lg-0">
         <input id="userInput" class="form-control mr-sm-2" type="text" placeholder="Search by City, State, or ZIP code">
-        <button id="submit" class="btn btn-primary my-2 my-sm-0" type="button">Search</button>
+        <button id="submit" class="btn my-2 my-sm-0" type="button" style="background-color: #8D0801;">Search</button>
     </form>
 </nav>
 
 <div class="container cards-cont">
 
-    <h1 class="text-center">Location: <span class="span-location">San Antonio, Texas, United States</span></h1>
+    <!--    <h1 class="text-center">Location: <span class="span-location">San Antonio, Texas, United States</span></h1>-->
 
     <div class="card-deck">
         <div class="card">
@@ -45,6 +45,7 @@
             <div id="mainDiv3"></div>
         </div>
     </div>
+    <h2 class="text-center" id="location-id">Location: <span class="span-location">San Antonio, Texas, United States</span></h2>
     <div id="map"></div>
     <pre id="coordinates" class="coordinates"></pre>
 </div>

@@ -8,6 +8,9 @@ $(document).ready(function () {
     var map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v11',
+        // style: 'mapbox://styles/ymenchaca2/ck5fs8ywr08ii1ita3nr8a3qa',
+
+        style: 'mapbox://styles/ymenchaca2/ck5frnjrz0u3t1ipoj0uki3j8',
         center: [-98.491142, 29.424349],
         zoom: 10
     });
