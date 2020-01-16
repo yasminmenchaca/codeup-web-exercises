@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ES6 Lecture</title>
+</head>
+<body>
+<h1>ES6 Lecture</h1>
+<div id="message"></div>
+<script>
+
+    // // old way
+    // console.log(Math.pow(2, 8)); // === 256
+    // // new syntax
+    // console.log((2 ** 8));// === 256
+
+    // for (let i = 0; i < 16; i++) {
+    //     console.log((2 ** i));
+    // }
+
+    // function explore() {
+    //     console.log(a);
+    //     console.log(b);
+    //     var a = 1;
+    //     let b = 2;
+    // }
+    // explore();
+
+    // {
+    //     let secret = 100;
+    // }
+    // console.log(secret); //  will not appear in console due to out of curly brackets
+
+    //  with block scope
+    // if (true) {
+    //     let name = 'codeup';
+    // }
+    // console.log(name); // undefined
+
+    // without block scope
+    // if (true) {
+    //     var name = 'codeup';
+    // }
+    // console.log(name); // 'codeup'
+
+    // const fruits = ["apple", "banana", "lemon"];
+    // fruits.push("mango");
+    // fruits[0] = "orange";
+
+    // for (let i = 0; i < fruit.length; i++) {
+    //
+    // }
+
+    // for (let fruit of fruits) {
+    //     console.log(fruit)
+    // }
+
+    // let dog = {
+    //     name:"rover",
+    //     breed:"chihuahua"
+    // }
+    // console.log("our " + dog.breed + " is named " + dog.name + ".");
+
+    // document.getElementById("message").innerHTML =
+    // `<p>our ${dog.breed} is named ${dog.name}.</p>`
+
+
+    // const ourFunction = function (name) {
+    //     console.log(`Hello ${name}!`)
+    // }
+    // ourFunction("Europa"); // Hello Europa!
+
+    // const newFunction = (name) => {
+    //     console.log(`Hello ${name}!`);
+    // }
+    // newFunction("Yasmin") // Hello Yasmin!
+
+    // const newSayHello = (name = "Codeup") => `Hello, ${name}!`;
+    // console.log(newSayHello("Yasmin")); // Hello, Yasmin!
+    // console.log(newSayHello()); //picks up default of "Codeup" due to empty parentheses
+
+    // // old way
+    // const name = 'codeup';
+    // const person = {
+    //     name: name,
+    //     age: 4
+    // };
+
+    // // new shorthand
+    // const name = 'codeup';
+    // const person = {
+    //     name,
+    //     age: 4
+    // };
+
+    /*
+    var: The scope of a variable defined with the keyword “var” is limited to the “function” within which it is defined. If it is defined outside any function, the scope of the variable is global.
+    var is “function scoped”.
+
+    let: The scope of a variable defined with the keyword “let” or “const” is limited to the “block” defined by curly braces i.e. {} .
+    “let” and “const” are“block scoped”.
+
+    const: The scope of a variable defined with the keyword “const” is limited to the block defined by curly braces. However if a variable is defined with keyword const, it cannot be reassigned.
+    “const” cannot be re-assigned to a new value. However it CAN be mutated.
+    */
+
+</script>
+</body>
+</html>
