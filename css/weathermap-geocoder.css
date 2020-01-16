@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Lato|Roboto&display=swap');
 
 body {
-    background-color: #6B0504;
+    background-color: #ACDBFD;
     font-family: 'Lato', sans-serif;
 }
 
@@ -20,25 +20,24 @@ body {
 }
 
 .cards-cont {
-    margin-top: .5em;
+    /*background-color: orange;*/
+    margin-top: 1em;
+
 }
 
-.card-deck {
-    margin-bottom: .5em;
+.geocoder {
+    /*position: absolute;*/
+    /*z-index: 1;*/
+    /*width: 50%;*/
+    /*left: 50%;*/
+    /*margin-left: -25%;*/
+    /*top: 20px;*/
 }
 
-#submit {
-    color: white;
+.mapboxgl-ctrl-geocoder {
+    min-width: 100%;
 }
 
-#header {
-    color: #EFE8D7;
-}
+.card-body {
 
-#location-id {
-    color: #EFE8D7;
-}
-
-.card-body, .card {
-    background-color: #EFE8D7;
 }
