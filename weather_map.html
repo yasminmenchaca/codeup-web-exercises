@@ -19,12 +19,28 @@
 </head>
 <body>
 
-<nav class="navbar sticky-top navbar-light" style="background-color: #3E000C;">
-    <h1 id="header">Weather Application</h1>
+<!--<nav class="navbar sticky-top navbar-light" style="background-color: #3E000C;">-->
+<!--    <h3 class="text-center" id="location-id">Weather in <span class="span-location">San Antonio, Texas, United States</span></h3>-->
+<!--    <form class="form-inline my-2 my-lg-0">-->
+<!--        <input id="userInput" class="form-control mr-sm-2" type="text" placeholder="Search by City, State, or ZIP code">-->
+<!--        <button id="submit" class="btn my-2 my-sm-0" type="button" style="background-color: #8D0801;">Search</button>-->
+<!--    </form>-->
+<!--</nav>-->
+
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #3E000C;">
+  <div class="text-center navbar-brand" id="location-id">Weather in <span class="span-location">San Antonio, Texas, United States</span></div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+    </ul>
     <form class="form-inline my-2 my-lg-0">
-        <input id="userInput" class="form-control mr-sm-2" type="text" placeholder="Search by City, State, or ZIP code">
-        <button id="submit" class="btn my-2 my-sm-0" type="button" style="background-color: #8D0801;">Search</button>
+      <input id="userInput" class="form-control mr-sm-2" type="search" placeholder="Search by City, State, or ZIP code" aria-label="Search">
+      <button class="btn my-2 my-sm-0" type="submit" id="submit" style="background-color: #8D0801;">Search</button>
     </form>
+  </div>
 </nav>
 
 <div class="container cards-cont">
@@ -45,7 +61,7 @@
             <div id="mainDiv3"></div>
         </div>
     </div>
-    <h2 class="text-center" id="location-id">Location: <span class="span-location">San Antonio, Texas, United States</span></h2>
+<!--    <h2 class="text-center" id="location-id">Location: <span class="span-location">San Antonio, Texas, United States</span></h2>-->
     <div id="map"></div>
     <pre id="coordinates" class="coordinates"></pre>
 </div>
