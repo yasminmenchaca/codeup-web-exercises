@@ -1,5 +1,4 @@
-$(document).ready(function () {
-    "use strict";
+"use strict";
 
 // // mapbox
 
@@ -23,6 +22,8 @@ $(document).ready(function () {
         .setLngLat([-98.491142, 29.424349])
         .addTo(map);
 
+
+    /////////////////////////////////////////////////////////////////////// card information  ///////////////////////////////////////////////////////////////////////
 
     const cardData = function (data) {
         // // Converting Time
@@ -248,6 +249,7 @@ $(document).ready(function () {
         }
     }
 
+
 /////////////////////////////////////////////////////////////////////// default marker  ///////////////////////////////////////////////////////////////////////
     var darkSkyInfo = "https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSkyKey + "/29.424349, -98.491142";
 
@@ -297,8 +299,11 @@ $(document).ready(function () {
             $.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSkyKey + "/" + latitude + ", " + longitude).done(function (data) {
 
                 cardData(data);
+
             });
+
             map.flyTo({center: result, zoom: 10});
+
             marker.setLngLat([longitude, latitude]);
             var mapCity = reverseGeocode(coordinates, mapboxToken);
             mapCity.then(function (result) {
@@ -306,4 +311,3 @@ $(document).ready(function () {
             });
         });
     });
-})
