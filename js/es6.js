@@ -36,7 +36,7 @@ const users = [
 // my answer
 const name = 'yasmin';
 const email = 'yasmin@email.com';
-const languages = ['html', 'css', 'javascript'];
+const languages = ['html', 'css', 'javascript', 'jquery', 'bootstrap'];
 
 // TODO: rewrite the object literal using object property shorthand
 
@@ -95,7 +95,7 @@ users.forEach(function (user) {
     // TODO: rewrite the assignment below to use template strings
 
     // my answer
-    developers.push(`${name}'s email is ${email}. ${name} knows ${languages}`);
+    developers.push(`${name}'s email is ${email}. ${name} knows ${languages.join(', ')}`);
 });
 
 //     developers.push(name + '\'s email is ' + email + name + ' knows ' + languages.join(', '));
@@ -120,4 +120,4 @@ for (let developer of developers) {
 }
 list += '</ul>';
 
-document.body.innerHTML = list;
+document.getElementById("message").innerHTML = list;
