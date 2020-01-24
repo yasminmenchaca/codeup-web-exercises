@@ -434,17 +434,17 @@
     let movies = [
         {
             "title": "Casablanca",
-            "rating": "4",
+            "rating": "1",
             "id": 1
         },
         {
             "title": "Star Wars: A New Hope",
-            "rating": "3",
+            "rating": "5",
             "id": 2
         },
         {
             "title": "Home Alone",
-            "rating": "4",
+            "rating": "1",
             "id": 3
         },
         {
@@ -459,17 +459,23 @@
         },
         {
             "title": "It",
-            "rating": "3",
+            "rating": "1",
             "id": 6
         }
     ];
 
-    let rating = movies.map(x => [x.title, x.rating]);
-
-    // let rating = movies.map((x) => {return {title: x.title , rating: x.rating}});
-
-    console.log(rating);
-    // console.log(movies[0].rating);
+    const rateMovie = movies => {
+        for (let movie of movies) {
+            if (movie.rating === '5') {
+                console.log(`${movie.title} is fantastic!`)
+            } else if (movie.rating === '1') {
+                console.log(`${movie.title} is terrible!`)
+            } else {
+                console.log(movie.title)
+            }
+        }
+    };
+    rateMovie(movies);
 
 </script>
 </body>
