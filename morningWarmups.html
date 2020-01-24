@@ -224,15 +224,15 @@
 
     //TODO: lets make santa
 
-/*
-    var santa = {
-        name: "Santa Claus",
-        niceList: ["Yasmin", "Mike", "Adam", "Ismael"],
-        sayHello: function() {
-            return "Merry Christmas! Ho Ho Ho!";
+    /*
+        var santa = {
+            name: "Santa Claus",
+            niceList: ["Yasmin", "Mike", "Adam", "Ismael"],
+            sayHello: function() {
+                return "Merry Christmas! Ho Ho Ho!";
+            }
         }
-    }
-*/
+    */
 
     // todo; Loop through the following  array of Reindeer objects and return an array of Reindeer objects that are "gold" reindeer
 
@@ -312,28 +312,28 @@
     // created with for loop
 
 
-/*
-    function getGoldReindeer(reindeerArray) {
-        var bucket = []; // creates an empty array and we force into an array
+    /*
+        function getGoldReindeer(reindeerArray) {
+            var bucket = []; // creates an empty array and we force into an array
 
-        for (var i = 0; i < reindeerArray.length; i++) {
-            // console.log(reindeerArray[i]); // prints out each reindeer
+            for (var i = 0; i < reindeerArray.length; i++) {
+                // console.log(reindeerArray[i]); // prints out each reindeer
 
-            // console.log(reindeerArray[i].isGold); // prints out their true/false value
+                // console.log(reindeerArray[i].isGold); // prints out their true/false value
 
-            // console.log(reindeerArray[i].name); // prints out their names
+                // console.log(reindeerArray[i].name); // prints out their names
 
-            if (reindeerArray[i].isGold === true) {
-                bucket.push(reindeerArray[i]); //adding to bucket
+                if (reindeerArray[i].isGold === true) {
+                    bucket.push(reindeerArray[i]); //adding to bucket
+                }
             }
+
+
+            return bucket;
         }
 
-
-        return bucket;
-    }
-
-    console.log(getGoldReindeer(reindeerList));
-*/
+        console.log(getGoldReindeer(reindeerList));
+    */
 
 
     // for each loop
@@ -390,7 +390,7 @@
     //         heightInMM: 120,
     //         fur: ['brown', 'white'],
     //         gender: "male",
-    //         dateOfBirth: "Spetember 21"
+    //         dateOfBirth: "September 21"
     //     }, {
     //         name: "Snoozer",
     //         heightInMM: 85,
@@ -430,6 +430,46 @@
     //     return string1.toLowerCase().split("").sort().join("") === string2.toLowerCase().split("").sort().join("")
     // }
     // console.log(isAnagram("string", "green"));
+
+    let movies = [
+        {
+            "title": "Casablanca",
+            "rating": "4",
+            "id": 1
+        },
+        {
+            "title": "Star Wars: A New Hope",
+            "rating": "3",
+            "id": 2
+        },
+        {
+            "title": "Home Alone",
+            "rating": "4",
+            "id": 3
+        },
+        {
+            "title": "Bambi",
+            "rating": "5",
+            "id": 4
+        },
+        {
+            "title": "The Lion King",
+            "rating": "1",
+            "id": 5
+        },
+        {
+            "title": "It",
+            "rating": "3",
+            "id": 6
+        }
+    ];
+
+    let rating = movies.map(x => [x.title, x.rating]);
+
+    // let rating = movies.map((x) => {return {title: x.title , rating: x.rating}});
+
+    console.log(rating);
+    // console.log(movies[0].rating);
 
 </script>
 </body>
