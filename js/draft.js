@@ -73,22 +73,37 @@ user.pet.name = "max";
 
 //////////////////////////////////////////////////////////////////////////////
 
-function eatNextNumber(arr) {
+function nomNom(arr) {
   var num1 = arr[0] + arr[1];
   var num2 = arr[2];
-
   var totalArr = num1 + num2;
   var otherArr = [num1, num2];
 
-  if (num1 <= num2) {
+  if (arr[0] < arr[1]) {
+    return arr;
+  } else if (num1 > num2) {
     return totalArr;
   } else {
     return otherArr;
   }
 }
 
-console.log(eatNextNumber([5, 6, 10]));
+console.log(nomNom([1, 2, 3])); // ➞ [1, 2, 3]
+console.log(nomNom([2, 1, 3])); // ➞ [3, 3]
+console.log(nomNom([8, 5, 9])); // ➞ [22]
 
-// arr = [2, 2, 3]
-// then [4, 3], arr[0] cannot be bigger than arr[1]
-// arr[0] + arr[1] = [total]
+/* 
+A number can eat the number to the right of it if it's smaller than itself. After eating that number, it becomes the sum of itself and that number. Your job is to create a function that returns the final array after the leftmost element has finished "eating".
+
+Examples
+[5, 3, 7] ➞ [8, 7] ➞ [15]
+
+// 5 eats 3 to become 8
+// 8 eats 7 to become 15
+[5, 3, 9] ➞ [8, 9]
+
+// 5 eats 3 to become 8
+// 8 cannot eat 9, since 8 < 9
+ 
+Test input contains only an array of numbers. 
+*/
